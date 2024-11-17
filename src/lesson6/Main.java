@@ -77,7 +77,8 @@ public class Main {
         // урок 11 1-12 программа калькулятор см в пакете lesson 6 calculator
 
 
-        System.out.println("вносим Изменения");
+//        System.out.println("вносим Изменения");
+        System.out.println("Склонированный репозиторий");
     }
 
 
