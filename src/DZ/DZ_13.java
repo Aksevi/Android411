@@ -32,6 +32,7 @@ public class DZ_13 {
         }*/
 
         // с рекурсией
+        System.out.println("Домашнее задание");
 
         int [] mas = {1, -2, 3, -5, -7};
         System.out.println(sumNegative(0, mas));
