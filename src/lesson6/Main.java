@@ -79,6 +79,7 @@ public class Main {
 
 //        System.out.println("вносим Изменения");
         System.out.println("Склонированный репозиторий");
+        System.out.println("И еще раз");
     }
 
 
