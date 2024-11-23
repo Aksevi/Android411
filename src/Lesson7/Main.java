@@ -77,7 +77,7 @@ public class Main {
 
         String s = "я буду хорошим программистом";
         System.out.println(s);
-        int[] result = new int['я' - 'а' + 1]; // создаем массив из символов на заданную длинну. +1 чтобы не было ошибки и включался последний элемент 33 буквы. я - 33 а  - 1 ->
+        int[] result = new int['я' - 'а' + 1]; // создаем массив из символов на заданную длинну. +1 чтобы не было ошибки и включался последний элемент 33 буквы. я - 33 а  - 1 -> 32 (а букв то 33 поэтому +1)
         System.out.println(Arrays.toString(result));
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
@@ -87,9 +87,9 @@ public class Main {
             }
         }
         System.out.println(Arrays.toString(result));
-//        for (int i = 0; i < result.length; i++) {
-//            System.out.println((char) (i + 'а') + " = " + result[i]);
-//        }
+        for (int i = 0; i < result.length; i++) {
+            System.out.println((char) (i + 'а') + " = " + result[i]);
+        }
 
         // ур 15 дз 2-53
 
