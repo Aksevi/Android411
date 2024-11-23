@@ -67,7 +67,15 @@ public class Main2 {
 
 // урок 13 1-45 см {lesson 6 -> Menu}
 
+        // разбор дз 13 урок 15 начало
+
+    int[] arr = {-2, 3, 8, -11, -4, 6};
+        System.out.println("n = " + calcNegativeNumbers (arr, 0)); // index слово без вызова метода тупо не появится. Внимательнее!!!
+    }
+    public static int calcNegativeNumbers(int[] numbers, int index){
+        if(index == numbers.length)
+            return 0;
+        return (numbers[index] < 0 ? 1 : 0) + calcNegativeNumbers(numbers, index + 1);
 
     }
-
 }

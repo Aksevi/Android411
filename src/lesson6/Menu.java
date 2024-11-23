@@ -26,7 +26,7 @@ public class Menu {
 
             switch (option){
                 case 1:
-                    inputArray(list); // inputArray название метода стр 37 , list название массива
+                    inputArray(list); // inputArray название метода стр 57, list название массива
                     break;
                 case 2:
                     displayArray(list); // название метода стр 44
@@ -54,7 +54,7 @@ public class Menu {
     }
 
     // вводим элементы массива.
-    public static void inputArray(int[] array) { // тот же list но для удобства назвали array коим он и будет являться везде ниже
+    public static void inputArray(int[] array) { // тот же list, но для удобства назвали array коим он и будет являться везде ниже
         for (int i = 0; i < array.length; i++) {
             System.out.print("->");
             array[i] = input.nextInt();
