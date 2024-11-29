@@ -62,10 +62,10 @@ public class Main {
 
             // 15 ур 2-09 сохранение строки в одном регистре (нижнем)
 
-    /*        String name = "Nikita";
+/*            String name = "Nikita";
     //        String name2 = name.toLowerCase(); //  пересохраняем значение name в name 2 преобразуем в нижний регистр
     //        System.out.println(name2);
-            System.out.println(name.toLowerCase());// не пересохраняем значение name но преобразуем в нижний регистр
+            System.out.println(name.toUpperCase());// не пересохраняем значение name но преобразуем в верхний регистр
             System.out.println(name);*/
 
     /*        String name = "Nikita";
