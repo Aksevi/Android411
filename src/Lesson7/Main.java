@@ -10,14 +10,14 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
 
-            // строи урок 15 1-37
+        // строи урок 15 1-37
     /*        String str1 = "Hello";
             String str2 = "World";
             str2 = str2 + "!"; // перезаписываем в str2 новое значение - это новая переменная  с новым значением
             String message = str1 + " " + str2;
             System.out.println(message);*/
 
-            // преобразуем тип данных в строке ур 15 1-49
+        // преобразуем тип данных в строке ур 15 1-49
 
     /*        char[] helloArray =  {'П', 'р', 'и', 'в', 'е', 'т'};
             String helloString  = new String(helloArray); // создаем новый объект типа данных стринг и преобразуем массив чар к типу данных стринг
@@ -35,7 +35,7 @@ public class Main {
             System.out.println(message); // = 25, потому что строка с числом объединилась
             */
 
-            // преобразование число в строку ур 15 1-57
+        // преобразование число в строку ур 15 1-57
 
 
     /*
@@ -44,23 +44,23 @@ public class Main {
             System.out.println(message);
     */
 
-            // преобразование строки в число ур 15 1-59
+        // преобразование строки в число ур 15 1-59
     /*
             String str1 = "2";
             int a = 5;
             int message = Integer.parseInt(str1) + a; // преобразование строки в целочисленное значение
             System.out.println(message);*/
 
-            // ур 15 2-04
+        // ур 15 2-04
     /*
             String str1 = "hello";
             int count = (str1).length();
     //        int count = (str1 + 57).length(); // "hello" + 57 -> "hello57".length
             System.out.println(count);*/
 
-    //        System.out.println(" ".length());
+        //        System.out.println(" ".length());
 
-            // 15 ур 2-09 сохранение строки в одном регистре (нижнем)
+        // 15 ур 2-09 сохранение строки в одном регистре (нижнем)
 
 /*            String name = "Nikita";
     //        String name2 = name.toLowerCase(); //  пересохраняем значение name в name 2 преобразуем в нижний регистр
@@ -71,13 +71,13 @@ public class Main {
     /*        String name = "Nikita";
             String name2 = name.toUpperCase(); // в заглавные
             System.out.println(name2);*/
-          // ур 15 2-14
+        // ур 15 2-14
     /*
             String s = "Я буду хорошим программистом";
             char res = s.charAt(7); // обращаемся к эллементу строкового массива. будет буква х
             System.out.println(res);*/
 
-            // ур 15 2-16.
+        // ур 15 2-16.
 
 /*            String s = "я буду хорошим программистом";
             System.out.println(s);
@@ -95,7 +95,7 @@ public class Main {
                 System.out.println((char) (i + 'а') + " = " + result[i]);
             }*/
 
-    //        16 урок начало
+        //        16 урок начало
 
     /*        String s1 = "";
     //        if (s1.length() == 0 || s1.isEmpty()) { // s1.length() == 0 || s1.isEmpty()
@@ -103,7 +103,7 @@ public class Main {
                 System.out.println("Пустая строка");
             }*/
 
-    //        16 урок 5 мин
+        //        16 урок 5 мин
 
     /*        String str1 = "Строка";
             char[] res = str1.toCharArray(); // // преобразовали строку в массив где каждый символ попадает в отдельный элемент массива
@@ -125,7 +125,7 @@ public class Main {
             String res = new String (chars); // преобразуем массив обратно в строку: создаем новую переменную и передаем в нее массив типа данных чар
             System.out.println(res);*/
 
-            //        16 урок 15 мин поиск подстроки или символа в строке
+        //        16 урок 15 мин поиск подстроки или символа в строке
 
     /*        String str1 = "I learning Java";
 
@@ -135,11 +135,11 @@ public class Main {
             System.out.println(str1.indexOf('a', 5)); // такой синтаксис позволяет искать с указанного индекса (в данном случае 5) и будет искать а пока не найдет первое совпадение начиная с индекса 5
             System.out.println(str1.lastIndexOf('a', 5)); // такой синтаксис позволяет искать вхождение символа а с 5 индекса к началу строки( то есть ищет с конца считая 5 индекс концом)*/
 
-            //        16 урок 21 мин поиск и удаление пробельных символов
+        //        16 урок 21 мин поиск и удаление пробельных символов
 
-    /*        System.out.println("     Hello World ".trim()); // .trim удаляет пробельные символы в начале и в конце строки*/
+        /*        System.out.println("     Hello World ".trim()); // .trim удаляет пробельные символы в начале и в конце строки*/
 
-            //        16 урок 23 мин получаем подстроку от строки
+        //        16 урок 23 мин получаем подстроку от строки
 /*
 //        System.out.println("I learning Java".substring(2, 10)); // создаем строку с заданного индекса по заданный индекс. в данном примере 2 индекс включается 10 - нет
 //        System.out.println("I learning Java".substring(2)); // с индекса 2 и до конца
@@ -168,7 +168,7 @@ public class Main {
         for (String word : words) // создаем переменную word и проходимся по массиву строк words
             System.out.println(word); // выводим переменную word. короче - преобразовали строку в массив строк разбив одну строку на подстроки*/
 
-          // ур 16 43 мин (практика по предыдущей закладке)
+        // ур 16 43 мин (практика по предыдущей закладке)
 
 /*        System.out.print("Введи ФИО: ");
         String str = input.nextLine(); // юзер вводит -> Акулов Сергей Викторович
@@ -373,16 +373,106 @@ public class Main {
             System.out.println("нет элемента для замены");
         }*/
 
+// ур 17 начало  StringBuilder - создает строковую переменную которую можно изменять
+
+/*        StringBuilder sb = new StringBuilder(); // тип данных сама переменная выделение типа данных под переменную(новый экз класса)
+        System.out.println(sb.capacity()); // сколько памяти выделяет под sb
+        System.out.println(sb.length());  // сколько длина sb
+        System.out.println(sb + "\n");
+
+        StringBuilder sb1 = new StringBuilder(1000); // тип данных сама переменная выделение типа данных под переменную(новый экз класса)
+        System.out.println(sb1.capacity()); // сколько памяти выделяет под sb
+        System.out.println(sb1.length());  // сколько длина sb
+        System.out.println(sb1 + "\n");
+
+        StringBuilder sb2 = new StringBuilder("Java"); // тип данных сама переменная выделение типа данных под переменную(новый экз класса)
+        System.out.println(sb2.capacity()); // сколько памяти выделяет под sb
+        System.out.println(sb2.length());  // сколько длина sb
+        System.out.println(sb2 + "\n");
+
+        StringBuilder sb3 = new StringBuilder("String"); // тип данных сама переменная выделение типа данных под переменную(новый экз класса)
+        System.out.println(sb3.capacity()); // сколько памяти выделяет под sb
+        System.out.println(sb3.length());  // сколько длина sb
+        System.out.println(sb3 + "\n");*/
+
+/*        StringBuilder sb = new StringBuilder();
+        sb.append('a'); // .append добавление - позволяет дозаписывать в конец строки то что добавили. преобазует любые данные в строку
+        sb.append(true); // добавит к символу а слово true в конец
+        sb.append(10); // добавит к символу а слово 10 в конец
+        sb.append(12345L); // добавит к символу а слово 12345 (L не отобразится так как это просто тип данных Long) в конец
+        sb.append(10.2f); // добавит к символу а слово 12345 (f не отобразится так как это просто тип данных float) в конец
+        sb.append("Hello")
+                .append(" ")
+                .append("world");
+        sb.insert(6,"!"); // .insert добавит на 5 индекс ! и все свдинет на символ дальше.НЕ ЗАМЕНИТ А ДОБАВИТ!
+        sb.delete(5, 7); // .delete удалит символ с нужного индекса
+      sb.deleteCharAt(5); // .deleteCharAt(n) удалит строго обин элемент по индексу n
+
+        sb.replace(5, 11, "Java"); //  .replace(a, b, "str")  ПОИСК и замена диапазона с индекса a до b на str - ТОЛЬКО СТРОКОВОЕ ЗНАЧЕНИЕ
+
+        System.out.println(sb);
+
+        String st = sb.substring(6, 7);
+       System.out.println(st);
+       st = sb.substring(6);
+       System.out.println(st);*/
+
+/*        sb.append("Hello")
+                .append(" ")
+                .append("world");
+
+        System.out.println(sb);
+//        sb.reverse(); // разворачиваем
+//        System.out.println(sb);
+
+        System.out.println(sb.indexOf("l")); // 2
+        System.out.println(sb.indexOf("world")); // 6 выведет первое совпадение
+        System.out.println(sb.indexOf("world1")); // -1 если не найдет
+        System.out.println(sb.indexOf("l",4)); // ищет что и с указанного индекса = 9*/
 
 
+        // ур 17 47 мин
 
-
-
-
-
-
-
+        StringBuilder sb1 = createStr(5, 3); // создаем метод
+        System.out.println(sb1);
+        modifyStr(sb1, "=", "равно");
+        modifyStr(sb1, "+", "плюс");
+        modifyStr(sb1, "-", "минус");
+        modifyStr(sb1, "*", "умножить");
+        System.out.println(sb1);
 
     }
+
+    public static StringBuilder createStr(int a, int b){// вызываем метод
+// все что с 443 до 449 - это sb1
+        StringBuilder  res = new StringBuilder();
+        res.append(a).append(" + ").append(b).append(" = ").append(a + b).append("\n");
+        res.append(a).append(" - ").append(b).append(" = ").append(a - b).append("\n");
+        res.append(a).append(" * ").append(b).append(" = ").append(a * b).append("\n");
+        return res; // вывод результата в стр 437
+
+    }
+
+        public static StringBuilder modifyStr(StringBuilder stBuild, String oldStr, String newStr){
+
+//        int pos = stBuild.indexOf("="); // ищем "=" в строке. ищет первое совпадние и стоп. поэтому заменит только в одной строке
+//        stBuild.deleteCharAt(pos); // удаляем элемент найденный (=)
+//        stBuild.insert(pos,"равно");
+        int pos; // ищем "=" везде
+        while((pos = stBuild.indexOf(oldStr)) != -1) { // проходит по всей строке пока искомый символ есть (то есть не = -1)
+//            stBuild.deleteCharAt(pos); // удаляем элемент найденный (=)
+//            stBuild.insert(pos, "равно"); // заменяет = на равно
+            stBuild.replace(pos, pos + 1, newStr);// заменяет эл-ты с pos до pos + 1 (то есть до след после pos)
+        }
+        return stBuild; // вывод результата в стр 440
+    }
+
+    // ур 17 1-23 объяснение задания слегка
+
+    // ур 17
+
+
+
+
 
 }
