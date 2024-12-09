@@ -29,7 +29,7 @@ public class DZ_12 {
 
         // второй вариант с методом
 
-/*        int n;
+        int n;
         System.out.print("Введите n: ");
         n = input.nextInt();
 
@@ -49,7 +49,7 @@ public class DZ_12 {
                     System.out.print("\\");
             }
             System.out.println();
-        }*/
+        }
 
         // 3 вариант с методом и выбором символа
 

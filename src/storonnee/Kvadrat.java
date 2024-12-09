@@ -10,7 +10,7 @@ public class Kvadrat {
         System.out.print("Введите размер одной стороны квадрата: ");
         int size = input.nextInt();
         if (size < 2) {
-            System.out.println("размер не должен быть меньше 2.");
+            System.out.println("размер не должен быть меньше 2");
             return;
         }
         for(int i = 0; i < size; i++){ // Верхняя граница
