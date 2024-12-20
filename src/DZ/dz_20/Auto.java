@@ -1,6 +1,7 @@
 package DZ.dz_20;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Auto {
 
@@ -11,11 +12,12 @@ public class Auto {
     private String colour;
     private String price;
 
-// конструктор
+    // конструктор
     Auto() {
 
     }
-// метод
+
+    // метод
     public Auto(String model, String year, String marc, String power, String colour, String price) {
         this.model = model;
         this.year = year;
@@ -24,13 +26,15 @@ public class Auto {
         this.colour = colour;
         this.price = price;
     }
-// геттеры и сеттеры
+
+    // геттеры и сеттеры
     public String getModel() { //  геттер получаем значение
         return model;
     }
 
     public void setModel(String model) { // сеттер установили
         this.model = model;
+
     }
 
     public String getYear() {
@@ -72,8 +76,9 @@ public class Auto {
     public void setPrice(String price) {
         this.price = price;
     }
+
     // метод printInfo
-    public void printInfo(){
+    public void printInfo() {
         System.out.println("********** Данные автомобиля **********");
         System.out.println("Модель:      " + this.model);
         System.out.println("Год выпуска: " + this.year);
@@ -83,5 +88,5 @@ public class Auto {
         System.out.println("Цена:        " + this.price);
         System.out.println("========================================");
     }
-}
 
+}

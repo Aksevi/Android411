@@ -380,15 +380,15 @@ public class Main {
         String[]arr = s.split("\\."); // сохраняем s.split в массив arr
         System.out.println(Arrays.toString(arr)); // вывод значений массива
         for (String temp:arr){ // создаем переменную yemp пробегаем по массиву arr
-            System.out.println(temp); // выводим с новой строки ээлементов. словами потому что разделяет по точке
+            System.out.println(temp); // выводим с новой строки элементов. словами потому что разделяет по точке
         }*/
 
 /*        String s = "Суворова Виктория, Россия, Сочи,    +7 999 555 77 33";
 
         String[]arr = s.split(",\\s*"); //  s.split разбивает строку на массив по символу разделителю и сохраняем s.split в массив arr
         System.out.println(Arrays.toString(arr)); // вывод значений массива
-        for (String temp:arr){ // создаем переменную yemp пробегаем по массиву arr
-            System.out.println(temp); // выводим с новой строки ээлементов. словами потому что разделяет по точке
+        for (String temp:arr){ // создаем переменную temp пробегаем по массиву arr
+            System.out.println(temp); // выводим с новой строки элементов. словами потому что разделяет по точке
         }*/
 
 //

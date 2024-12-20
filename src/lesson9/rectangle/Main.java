@@ -16,15 +16,15 @@ public class Main {
  // класс rect1
         Rectangle rect1 = new Rectangle(4, 15);
 // это если сам вводить хочешь. тогда комментируй строки 26-27
-        System.out.print("длина -> ");
+/*        System.out.print("длина -> ");
         int length = input.nextInt();
         rect1.setLength(length);
         System.out.print("ширина -> ");
         int weight = input.nextInt();
-        rect1.setWeight(weight);
+        rect1.setWeight(weight);*/
 // это предустановленные значения 3 и 9 соответственно. комментируй строки 19-24
-//        rect1.setLength(3);
-//        rect1.setWeight(9);
+        rect1.setLength(3);
+        rect1.setWeight(9);
         System.out.println("Длина прямоугольника: "  + rect1.getLength());
         System.out.println("Ширина прямоугольника: "  + rect1.getWeight());
 

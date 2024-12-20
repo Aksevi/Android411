@@ -9,13 +9,15 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
 
-        Auto a1 = new Auto("X7 M50i", "2021", "BMW", "530 л.с.", "White", "1079000");
+//        Auto a1 = new Auto("X7 M50i", "2021", "BMW", "530 л.с.", "White", "1079000");
+        Auto a1 = new Auto("", "", "", "", "", "");
 // пробуем выбор действия
         int option;
         do {
             System.out.println("Меню:");
             System.out.println("1 - Показать данные.");
             System.out.println("2 - Ввести данные.");
+            System.out.println("0 - Выход.");
             System.out.print("Нажмите нужную цифру -> ");
 
             option = input.nextInt();
@@ -23,12 +25,12 @@ public class Main {
             switch (option){
 
                 case 1:
-
                 a1.printInfo();
                 break;
 
                 case 2:
-//                    input.nextLine(); // очищаем буфер. без него будет глюк с пропуском ввода модели
+
+                    input.nextLine(); // очищаем буфер. без него будет глюк с пропуском ввода модели
                     System.out.print("Введи модель автомобиля -> ");
                     String model = input.nextLine();
                     a1.setModel(model);
@@ -47,11 +49,20 @@ public class Main {
                     System.out.print("Введи цену -> ");
                     String price = input.nextLine();
                     a1.setPrice(price);
+                    System.out.println("Данные сохранены. возврат в меню.");
                     break;
 
-            }
+                case 0:
+                    System.out.println("Выход из программы");
+//  завершение работы программы
+                    return;
 
-        } while (option != 2);
+                default:
+                    System.out.println("Неверный выбор. Давай еще раз.");
+            }
+// обеспечивает возварт в меню
+       } while (true);
+
 
 // это нужно если без меню с выбором действий
 //        System.out.print("Введи модель автомобиля -> ");
@@ -73,8 +84,20 @@ public class Main {
 //        String price = input.nextLine();
 //        a1.setPrice(price);*/
 //        System.out.println("Год выпуска: " + a1.getYear());
-        a1.printInfo();
+//        a1.printInfo();
 //        System.out.println("Модель: " + a1.getModel());
+// методы сканеров
+    }
+    public static int scannerInput() {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        return n;
+    }
+    public static String scannerInputText() {
+        Scanner input = new Scanner(System.in);
+        String n = input.nextLine();
+        return n;
     }
 }
+
 

@@ -9,11 +9,14 @@ public class Rectangle {
     private int length;
     private int weight;
 
-    // конструктор
+    // конструктор нужен всегда и присваивает первонач значения полям length и weigth
     public Rectangle(int length, int weight) {
 
-        this.length = length;
-        this.weight = weight;
+//        this.length = length;
+//        this.weight = weight;
+        // не дает отриц числа ввести
+        setWeight(weight);
+        setLength(length);
 
     }
 
