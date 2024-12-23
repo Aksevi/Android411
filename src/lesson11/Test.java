@@ -14,6 +14,9 @@ public class Test {
         l1.show();
 // вызываем метод  show
 //        l1.show();
+//        l1.showId();
+        System.out.println(l1.id);
+        l1.id = 5;
         l1.showId();
 
     }
@@ -24,7 +27,7 @@ class Properties {
 
     int width; // толщина линии
     String color; // цвет линии
-    int id = 1;
+    protected int id = 1;
 
 // конструктор Properties без  параметров
     public Properties() {
@@ -43,7 +46,7 @@ class Properties {
         System.out.println("Ширина - " + width + " px, Цвет - " + color);
     }
 }
-// класс линии наследуемый от родительского класса
+// дочерний класс линии наследуемый от родительского класса
 class Line extends Properties {
     // координаты точек линии
     double x1, y1;
@@ -67,7 +70,9 @@ class Line extends Properties {
 
 // метод вызова переменной id/ значение из вложенного класса и из родительского (super.id)
     void showId(){
-        System.out.println("id = " + id + ", super.id = " + super.id);
+        System.out.println("id = " + id
+                //+ ", super.id = " + super.id
+                );
     }
 
 }

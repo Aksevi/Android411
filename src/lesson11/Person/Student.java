@@ -23,6 +23,29 @@ public class Student extends Human { // наследуем  Students от кла
         setAttendance(attendance);
         System.out.println("StudentConstructor:\t" + Integer.toHexString(hashCode()));
     }
+
+// еще конструктор ур 23 24 мин принимает класс Human
+public Student(Human human, String speciality, String group, double rating, double attendance) {
+    super(human);
+    setSpeciality(speciality);
+    setGroup(group);
+    setRating(rating);
+    setAttendance(attendance);
+    System.out.println("StudentConstructor:\t" + Integer.toHexString(hashCode()));
+}
+
+// 23 57 мин
+    public Student(Student other){
+        super(other);
+        this.speciality = other.speciality;
+        this.group = other.group;
+        this.rating = other.rating;
+        this.attendance = other.attendance;
+        System.out.println("StudentCopyConstructor:\t" + Integer.toHexString(hashCode()));
+
+
+    }
+
 // геттеры и сеттеры
     public String getSpeciality() {
         return speciality;
@@ -49,10 +72,12 @@ public class Student extends Human { // наследуем  Students от кла
     }
 
     public double getAttendance() {
-        return attendance;
+
+            return attendance;
     }
 
     public void setAttendance(double attendance) {
+        if (attendance > 0)
         this.attendance = attendance;
     }
 

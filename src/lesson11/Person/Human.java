@@ -7,17 +7,21 @@ public class Human {
     private String firstName; // имя
     private int age; // возраст
 
-
-
     public Human(String lastName, String firstName, int age) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.age = age;
         System.out.println("Human Constructor:\t" + Integer.toHexString(hashCode())); // Integer.toHexString(hashCode()) создаст 16ричное представление хэш кода объекта
     }
+  //  ур 23 29
+    public Human(Human other){
+        this.lastName = other.lastName;
+        this.firstName = other.firstName;
+        this.age = other.age;
+        System.out.println("HumanCopyConstructor:\t" + Integer.toHexString(hashCode())); // Integer.toHexString(hashCode()) создаст 16ричное представление хэш кода объекта
+    }
 
 // так как все свойства закрыты (private) то нужны геттеры и сеттеры
-
     public String getLastName() {
         return lastName;
     }
@@ -43,7 +47,6 @@ public class Human {
     }
 
 //alt+ins -> toString() создаем метод toString ур 22 2-43
-
     @Override
     public String toString() {
         return "Human{" +
