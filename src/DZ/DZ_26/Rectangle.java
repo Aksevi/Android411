@@ -11,6 +11,7 @@ public class Rectangle implements Resize{
         this.heigth = heigth;
     }
 
+
 // переопределяем методы
     @Override
     public void resizeWidth(int width) {
