@@ -10,7 +10,7 @@ public class Circle extends Figure {
         this.radius = radius;
     }
 
-// нах площади
+//метод нах площади
     @Override
     public double getArea() {
         return Math.PI * radius * radius;

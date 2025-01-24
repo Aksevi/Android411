@@ -10,7 +10,7 @@ public class Rectangle extends Figure {
         this.heigth = heigth;
     }
 
-// нах площади
+// метод нах площади
     @Override
     public double getArea() {
         return width * heigth;
