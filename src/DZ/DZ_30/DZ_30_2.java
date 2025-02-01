@@ -10,7 +10,7 @@ public class DZ_30_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-/*// лямбда выражение
+/*// лямбда выражение/ Если его оставить тут то word1 и word2 можно писать
         ShortWord2 whatIsShort = (word1, word2) -> word1.length() <= word2.length() ? word1 : word2;*/
 
 // реализация ввода пользователем строк в классе main
@@ -19,8 +19,8 @@ public class DZ_30_2 {
         System.out.print("2 слово -> ");
         String word2 = scanner.nextLine();
 
-// лямбда выражение
-        ShortWord2 whatIsShort = (a, b) -> word1.length() <= word2.length() ? word1 : word2;
+// лямбда выражение/ если выражение писать тут (после того как их объявил в 17-20 стр) то word1 и word2 писать нельзя - не могут совпадать имена. поэтому их меняем на любое другое/ дальше их можно и не трогать используя word1  и word2ё
+        ShortWord2 whatIsShort = (w1, w2) -> word1.length() <= word2.length() ? word1 : word2;
 
 // вывод слов
         System.out.println("Первое слово: " + word1);

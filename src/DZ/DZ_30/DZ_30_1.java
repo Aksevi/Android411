@@ -11,10 +11,11 @@ public class DZ_30_1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-// анономный класс на основе интерфейса ShortWord. whatIsShort это имя класса
+// анономный класс whatIsShort на основе интерфейса ShortWord. whatIsShort это имя класса
 ShortWord whatIsShort = new ShortWord() {
+// метод  shortWord
     @Override
-    public String shortWord(String word1, String word2) { // метод  shortWord
+    public String shortWord(String word1, String word2) {
 
         return word1.length() <= word2.length() ? word1 : word2; // реализация метода через тернанрый оператор. сравниваем длину word1 (word1.length) и длину word2 (word2.length) и выводим результат
     }
