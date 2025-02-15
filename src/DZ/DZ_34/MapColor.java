@@ -20,7 +20,7 @@ public class MapColor {
         colors[7] = "black";
         colors[8] = "yellow";
         colors[9] = "brown";
-// создаем HashMap/ Key_Value просто имя. в скобках принимаемые значеения - String это текст и Color - это значения типа класс Color
+// создаем HashMap/ Key_Value просто имя. в скобках принимаемые значения - String это текст и Color - это значения типа класс Color
         Map<String, Color> Key_Value = new HashMap<>();
 
 // создаем временную переменную  типа String, проходим по массиву colors и по очереди его элементы кладем в color

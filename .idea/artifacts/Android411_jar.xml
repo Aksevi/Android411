@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Android411:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Android411_jar</output-path>
+    <root id="archive" name="Android411.jar">
+      <element id="module-output" name="Android411" />
+    </root>
+  </artifact>
+</component>
