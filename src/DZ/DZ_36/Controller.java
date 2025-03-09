@@ -35,7 +35,7 @@ public class Controller {
             String filmTitle = filmInterface.getUserFilm();
 
             try{
-                Map film = filmModel.getSingleFilm(filmTitle);
+                Map film = filmModel.getSingleFilm(filmTitle);// получаем конкретный фильм
                 filmInterface.showSingleFilm(film);
             }catch (NullPointerException name){
                 filmInterface.showIncorrectTitleError(filmTitle);

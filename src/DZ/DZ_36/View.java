@@ -1,9 +1,6 @@
 package DZ.DZ_36;
 
-import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class View {
 
@@ -29,12 +26,16 @@ public class View {
         dictFilm.put("год выпуска", "");
         dictFilm.put("длительность", "");
         dictFilm.put("студия", "");
-        dictFilm.put("актеры", "");
+//        dictFilm.put("актеры", "");
+
         System.out.println("============ Добавление фильма ============");
 // задействуем ключи текущего элемента. В этом цикле пользователь выбирает пункт меню и далее по циклу идем - ввел название -> запрос режиссера -> запрос года выпуска и тд
         for (Map.Entry<String, String> temp : dictFilm.entrySet()) {
             System.out.print(temp.getKey() + ": ");
             dictFilm.put(temp.getKey(), input.nextLine());
+            if (temp.getKey() == "актеры"){// если в ключе приходит "актеры" то обращаемся к метожу ввода актеров в списко
+                inputActors();
+            }
         }
         System.out.println("======================================================");
         return dictFilm;
@@ -78,6 +79,17 @@ public class View {
         System.out.println("Фильм " + title + " был удален");
         System.out.println("=====================================================");
 
+    }
+    public static List<String> inputActors(){
+        Scanner input = new Scanner(System.in);
+        List<String> actors = new ArrayList<>();
+        System.out.println("Введите имена актеров по одному. оставьте пустую строку для завершения");
+        while (true){
+            String actor = input.nextLine().trim();
+            if (actor.isEmpty()) break;
+            actors.add(actor);
+        }
+        return actors;
     }
 
 

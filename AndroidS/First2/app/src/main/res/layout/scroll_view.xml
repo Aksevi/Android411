@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Что такое Lorem Ipsum?"
+            android:textSize="34sp"
+            />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem Ipsum – это просто пустышка печатной и типографской отрасли. Lorem Ipsum был стандартным фиктивным текстом в отрасли с 1500-х годов, когда неизвестный печатник взял галеру шрифтов и перемешал ее, чтобы сделать книгу образцов шрифта. Он пережил не только пять столетий, но и скачок в электронный набор, оставшись по сути неизменным. Он был популяризирован в 1960-х годах с выпуском листов Letraset, содержащих отрывки Lorem Ipsum, а в последнее время с помощью настольного издательского программного обеспечения, такого как Aldus PageMaker, включая версии Lorem Ipsum."
+            />
+
+        <include
+            layout="@layout/button_panel"
+            />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Откуда это берется?"
+            android:textSize="34sp"
+            />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Вопреки распространенному мнению, Lorem Ipsum — это не просто случайный текст. Он уходит корнями в произведение классической латинской литературы 45 года до нашей эры, что делает его возрастом более 2000 лет. Ричард Мак-Клинток, профессор латыни в колледже Хэмпден-Сидней в Вирджинии, отыскал одно из наиболее неясных латинских слов, consectetur, в отрывке из Lorem Ipsum и, проанализировав цитаты этого слова в классической литературе, обнаружил его несомненный источник."
+            />
+
+        <include
+            layout="@layout/button_panel"
+            />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Почему мы его используем?"
+            android:textSize="34sp"
+            />
+
+        <include
+            layout="@layout/button_panel"
+            />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Давно известно, что читатель будет отвлекаться на читабельное содержимое страницы, глядя на ее макет. Смысл использования Lorem Ipsum заключается в том, что он имеет более или менее нормальное распределение букв, в отличие от использования «Content here, content here», что делает его похожим на удобочитаемый английский. Многие настольные издательские пакеты и редакторы веб-страниц теперь используют Lorem Ipsum в качестве типового текста по умолчанию, и поиск по запросу «lorem ipsum» обнаружит множество веб-сайтов, которые все еще находятся в зачаточном состоянии. С годами развивались различные версии, иногда случайно, иногда специально (впрыскивание юмора и тому подобное)."
+            />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Где я могу их взять?"
+            android:textSize="34sp"
+            />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Существует множество вариаций отрывков из Lorem Ipsum, но большинство из них претерпели изменения в той или иной форме, из-за введенного юмора или случайно подобранных слов, которые не выглядят даже немного правдоподобными. Если вы собираетесь использовать отрывок из Lorem Ipsum, вы должны быть уверены, что в середине текста не спрятано ничего постыдного. Все генераторы Lorem Ipsum в Интернете имеют тенденцию повторять предопределенные фрагменты по мере необходимости, что делает его первым настоящим генератором в Интернете. Он использует словарь из более чем 200 латинских слов в сочетании с несколькими типовыми структурами предложений для создания Lorem Ipsum, который выглядит разумно. Таким образом, сгенерированный Lorem Ipsum всегда свободен от повторений, добавленного юмора, нехарактерных слов и т. д."
+            />
+    </LinearLayout>
+</ScrollView>

@@ -54,6 +54,8 @@ public class Model {
     public void saveData(){
          try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(dbName))){
              oos.writeObject(articles);// articles - все статьи тут лежат см стр 13
+             File file = new File("db.txt");
+             System.out.println("Файл сохраняется сюда " + file.getAbsolutePath());
          } catch (Exception ex){
              System.out.println(ex.getMessage());
 

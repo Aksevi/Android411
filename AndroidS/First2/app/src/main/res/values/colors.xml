@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+<!--  делаем серый цвет фоном-->
+    <color name="background">#D1D1D1</color>
+<!--    делаем свои желтый и зеленый цвета-->
+    <color name="first_color">#F6AF04</color>
+    <color name="second_color">#196605</color>
+</resources>
