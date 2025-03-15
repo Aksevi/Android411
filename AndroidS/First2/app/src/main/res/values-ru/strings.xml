@@ -10,4 +10,11 @@
     <string name="first_button">Кнопка 1</string>
     <string name="second_button">Кнопка 2</string>
     <string name="third_button">Кнопка 3</string>
+    <string name="firth_button">Кнопка 5</string>
+    <string name="logo_text">Калькулятор</string>
+    <string name="number_1">Число 1</string>
+    <string name="number_2">Число 2</string>
+    <string name="sum_btn">Вычислить сумму</string>\
+    <string name="calc_result">Результат</string>
+    <string name="exit_btn">Выход</string>
 </resources>
