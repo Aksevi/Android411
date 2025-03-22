@@ -125,7 +125,7 @@ public class HW_4 extends AppCompatActivity {
                         dialog.cancel();
                     }
                 });
-        AlertDialog dialog = builder.create(); // создаем переменную типа AlertDialog  с именем dialog обращаемся через нее к builder из стр 108
+        AlertDialog dialog = builder.create(); // создаем переменную типа AlertDialog  с именем dialog обращаемся через нее к builder из стр 109
         dialog.show(); // вызываем метод
     }
 }

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Shark_floor</string>
+    <string name="number_1">Количество этажей</string>
+    <string name="number_2">Первая квартира</string>
+    <string name="number_3">Последняя квартира</string>
+    <string name="number_4">Искомая квартира</string>
+    <string name="result">Результат</string>
+    <string name="find_btn">Найти</string>
+    <string name="exit_btn">Выйти</string>
+</resources>
