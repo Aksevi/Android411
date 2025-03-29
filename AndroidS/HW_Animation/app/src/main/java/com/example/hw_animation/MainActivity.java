@@ -1,8 +1,6 @@
-package com.example.second;
+package com.example.hw_animation;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,13 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-    }
-    // метод перехода по клику на новую стр 7 урок начало
-    public void newActivity(View view){
-
-        Intent intent = new Intent(this, SecondActivity.class); //Intent - тип  intent - имя   new Intent(this, SecondActivity.class) -this - с этой стр/ SecondActivity.class - куда )
-
-        startActivity(intent);
 
     }
 }

@@ -4,6 +4,7 @@
     <string name="number_2">Первая квартира</string>
     <string name="number_3">Последняя квартира</string>
     <string name="number_4">Искомая квартира</string>
+    <string name="number_5">Квартир на первом этаже</string>
     <string name="result">Результат</string>
     <string name="find_btn">Найти</string>
     <string name="exit_btn">Выйти</string>

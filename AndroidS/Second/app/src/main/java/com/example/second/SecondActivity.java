@@ -57,7 +57,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
 // второй способ кнопки возврата назад
-        Button back = findViewById(R.id.back);
+        Button back = findViewById(R.id.back); // доступ к самой кнопке. можно и вот тут объявить еге тип и имя
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

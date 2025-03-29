@@ -13,7 +13,7 @@
         android:id="@+id/floors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="62dp"
+        android:layout_marginTop="52dp"
         android:background="@color/material_dynamic_neutral70"
         android:ems="10"
         android:hint="@string/number_1"
@@ -73,7 +73,7 @@
         android:id="@+id/find_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="102dp"
         android:fontFamily="@font/dotgothic16"
         android:text="@string/find_btn"
         android:textSize="24dp"
@@ -111,6 +111,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
