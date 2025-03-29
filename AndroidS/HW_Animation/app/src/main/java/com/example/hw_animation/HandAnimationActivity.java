@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class HandAnimationActivity extends AppCompatActivity {
 
-    private MediaPlayer sound;
+    private MediaPlayer sound; // переменная для звука
 
 
 
@@ -24,22 +24,22 @@ public class HandAnimationActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_hand_animation);
 
-        ImageView image = findViewById(R.id.hand_image);
-        sound = MediaPlayer.create(this, R.raw.xcom);
+        ImageView image = findViewById(R.id.hand_image); // доступ к анимации
+        sound = MediaPlayer.create(this, R.raw.xcom); // доступ к переменной звука
 
 
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ((AnimationDrawable) image.getDrawable()).start();
-                soundPlay(sound);
+                ((AnimationDrawable) image.getDrawable()).start();// вызов анимации
+                soundPlay(sound);// вызов метода проигрывания звука
 
             }
         });
 
     }
-
+// метод проигрывания звука
     public void soundPlay (MediaPlayer sound){
         sound.start();
     }
