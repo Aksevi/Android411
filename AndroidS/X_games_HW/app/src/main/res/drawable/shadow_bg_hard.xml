@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--тень-->
+    <item>
+
+        <shape android:shape="rectangle">
+            <solid android:color="#E67F5F"/> <!--цвет тени-->
+            <corners android:radius="10dp"/>  <!--скругление углов-->
+        </shape>
+
+    </item>
+    <!--основной фон-->
+    <item android:bottom="10dp"  android:right="10dp"> <!--смещение тени -->
+        <shape android:shape="rectangle">
+
+            <solid android:color="@android:color/transparent"/> <!--основной цвет фона -->
+            <corners android:radius="10dp"/> <!-- скругление углов -->
+        </shape>
+
+    </item>
+
+</layer-list>

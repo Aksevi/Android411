@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">X)_games_HW</string>
+    <string name="enter_your_name_and_choose_level">Enter your name and choose level</string>
+    <string name="easy">Easy</string>
+    <string name="name">Name</string>
+    <string name="hard">Hard</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="Имя_игрока">Имя игрока</string>
+    <string name="Противник">Противник</string>
+</resources>

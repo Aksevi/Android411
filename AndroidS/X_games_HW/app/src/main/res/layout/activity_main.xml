@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/lavender"
+    android:padding="40dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_box"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_your_name_and_choose_level"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/playerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:background="@drawable/green_border"
+            android:ems="10"
+            android:hint="@string/enter_your_name"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:textColor="@color/green"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/easy_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/easy"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+            />
+
+        <Button
+            android:id="@+id/hard_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hard"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            app:cornerRadius="20dp"
+
+            />
+
+
+    </LinearLayout>
+// ниже до 100 стр выбор игроком х или у
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout"-->
+<!--        android:background="@drawable/white_box"-->
+<!--        android:padding="10dp">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/xButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:fontFamily="@font/merienda_one"-->
+<!--            android:text="x"-->
+<!--            android:textSize="24sp"-->
+<!--            android:textStyle="italic"-->
+<!--            android:textColor="@color/green"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/textSpacerNoButtons"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:fontFamily="@font/merienda_one"-->
+<!--            android:text="Y"-->
+<!--            android:textSize="24sp"-->
+<!--            android:textStyle="italic"-->
+<!--            android:textColor="@color/red"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            />-->
+<!--    </LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
