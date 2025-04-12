@@ -10,55 +10,187 @@
     >
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:id="@+id/playerLayout"
+        android:layout_width="350dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal"
-        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/shadow_bg"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/playerName"
+            android:id="@+id/player"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="2"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:padding="10dp"
-            android:text="@string/Имя_игрока"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:shadowColor="@color/black"
-            android:shadowDx="10"
-            android:shadowDy="10"
-            android:shadowRadius="12"/>
-
-<!--        <TextView-->
-<!--            android:id="@+id/VS_Text"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="VS"-->
-<!--            android:textSize="16sp"-->
-<!--            android:textStyle="bold"-->
-
-<!--            />-->
-
-        <TextView
-            android:id="@+id/phoneModel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/Противник"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:shadowColor="@color/black"
             android:shadowDx="10"
             android:shadowDy="10"
             android:shadowRadius="12"
-            />
+            android:text="Player name"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/playerScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="12"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/phoneLayout"
+        android:layout_width="350dp"
+        android:layout_height="66dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/playerLayout">
+
+        <TextView
+            android:id="@+id/phoneName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="2"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:padding="10dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="12"
+            android:text="Phone name"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/phoneScore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="12"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingStart="10dp"/>
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/easyField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneLayout">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image5"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image6"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image7"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image8"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image9"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+        </TableRow>
+    </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

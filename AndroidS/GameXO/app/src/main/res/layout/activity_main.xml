@@ -30,10 +30,15 @@
             android:textAllCaps="true"
             android:textColor="@color/blue"
             android:textSize="26sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:shadowColor="@color/lavender"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="12"
+            />
 
         <EditText
-            android:id="@+id/payerOne"
+            android:id="@+id/playerOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -45,7 +50,12 @@
             android:inputType="text"
             android:padding="12dp"
             android:textColor="@color/blue"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:shadowColor="@color/black"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="12"
+            />
 
         <EditText
             android:id="@+id/playerTwo"
@@ -61,7 +71,10 @@
             android:padding="12dp"
             android:textColor="@color/red"
             android:textStyle="italic"
-
+            android:shadowColor="@color/black"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="12"
             />
 
         <Button
@@ -72,7 +85,12 @@
             android:layout_marginBottom="20dp"
             android:text="@string/start_game"
             android:textSize="18sp"
-            app:cornerRadius="20dp" />
+            app:cornerRadius="20dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="12"
+            />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

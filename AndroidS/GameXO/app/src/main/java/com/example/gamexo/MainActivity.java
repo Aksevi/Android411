@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        EditText playerOne = findViewById(R.id.payerOne);
+        EditText playerOne = findViewById(R.id.playerOne);
         EditText playerTwo = findViewById(R.id.playerTwo);
         Button startGameButton = findViewById(R.id.startGameButton);
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 String getPlayerOneName = playerOne.getText().toString(); // введенные данные преобразуем в строковое значение
                 String getPlayerTwoName = playerTwo.getText().toString(); // введенные данные преобразуем в строковое значение
 
-                if (getPlayerOneName.isEmpty() || getPlayerTwoName.isEmpty()){ // если не ввели что то
+                if (getPlayerOneName.isEmpty() || getPlayerTwoName.isEmpty()){ // если не ввели ничего то то
 
                     Toast.makeText(MainActivity.this, "Please enter Player name", Toast.LENGTH_SHORT).show(); // то покажет окно с этим текстом
 
@@ -41,9 +41,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, PlayingField.class);//перейдет на нужное окно
 
 // вместе с переходом на новую стр забираем те данные которые ввел пользователь
-                    intent.putExtra("playerOne", getPlayerOneName);
-                    intent.putExtra("playerTwo", getPlayerTwoName);
-
+                    intent.putExtra("playerOne", getPlayerOneName); // "playerOne" - это ключ
+                    intent.putExtra("playerTwo", getPlayerTwoName); // "playerTwo" - это ключ
 
                     startActivity(intent);
 

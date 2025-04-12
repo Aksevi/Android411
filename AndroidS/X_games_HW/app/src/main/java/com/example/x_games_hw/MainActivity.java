@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
 
+// нажимаем на кнопку hardButton
                 hardButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

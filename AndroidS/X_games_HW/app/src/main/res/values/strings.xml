@@ -7,4 +7,6 @@
     <string name="enter_your_name">Enter your name</string>
     <string name="Имя_игрока">Имя игрока</string>
     <string name="Противник">Противник</string>
+    <string name="Result">Результат</string>
+    <string name="Restart_Game">Начать заново</string>
 </resources>

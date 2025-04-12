@@ -8,6 +8,8 @@
     tools:context=".PlayingField"
     android:background="@color/lavender">
 
+    <!--первый горизонт слой большой-->
+
     <LinearLayout
         android:id="@+id/linearLayoutOuter1"
         android:layout_width="match_parent"
@@ -19,6 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!--левый верт слой плайер оне-->
         <LinearLayout
             android:id="@+id/PlayerOneLayoutOuter"
             android:layout_width="120dp"
@@ -34,6 +37,11 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:text="@string/player_one"
+                android:maxLines="1"
+                android:shadowColor="@color/black"
+                android:shadowDx="8"
+                android:shadowDy="8"
+                android:shadowRadius="12"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -48,6 +56,7 @@
                 app:srcCompat="@drawable/ximage" />
         </LinearLayout>
 
+        <!--правый верт слой плайер ту-->
         <LinearLayout
             android:id="@+id/PlayerTwoLayoutOuter"
             android:layout_width="120dp"
@@ -62,7 +71,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
+                android:maxLines="1"
                 android:text="@string/player_two"
+                android:shadowColor="@color/black"
+                android:shadowDx="8"
+                android:shadowDy="8"
+                android:shadowRadius="12"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -81,45 +95,157 @@
 
     <LinearLayout
         android:id="@+id/LinearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutOuter1"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        >
 
+        <!-- второйлевый верт слой счета-->
         <LinearLayout
             android:id="@+id/PlayerOneLayout"
             android:layout_width="120dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/white_box"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="5dp"
             >
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/scoreOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="0"
+                android:shadowColor="@color/black"
+                android:shadowDx="8"
+                android:shadowDy="8"
+                android:shadowRadius="12"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                />
         </LinearLayout>
 
+        <!-- второй правый верт слой счета-->
         <LinearLayout
             android:id="@+id/PlayerTwoLayout"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/white_box"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="5dp"
             >
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/scoreTwo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="0"
+                android:shadowColor="@color/black"
+                android:shadowDx="8"
+                android:shadowDy="8"
+                android:shadowRadius="12"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="10dp"
+                />
         </LinearLayout>
     </LinearLayout>
+
+    <!-- слой таблицы-->
+    <TableLayout
+        android:id="@+id/tableLoyout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout">
+
+        <!--таблица 3х3-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image5"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image6"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image7"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image8"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image9"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/white_box" />
+        </TableRow>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

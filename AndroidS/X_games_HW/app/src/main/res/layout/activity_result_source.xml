@@ -8,4 +8,37 @@
     android:layout_height="match_parent"
     tools:context=".ResultSource">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:background="@color/lavender"
+      >
+
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Result"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="40dp"
+        />
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Restart_Game"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/lavender"
+        android:layout_margin="50dp"
+        app:cornerRadius="20dp"
+        />
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
