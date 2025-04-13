@@ -22,22 +22,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 // получаем доступ к переменным
         EditText playerName = findViewById(R.id.playerName);
-        Button easyButton = findViewById(R.id.easy_level);
-        Button hardButton = findViewById(R.id.hard_level);
+        Button startEasy = findViewById(R.id.startEasy);
+        Button startHard = findViewById(R.id.startHard);
 
 // нажимаем на кнопку easyButton
-        easyButton.setOnClickListener(new View.OnClickListener() {
+        startEasy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 // забираем те данные которые игрок ввел в поле имя игрока
                 String getPlayerName = playerName.getText().toString();// забираем введенные данные в строковую переменную(чтобы потом отображать и работать как с текстом). playerName - обращаемся к переменной в которую вводят имя .getText() - получаем ее текстовое содержимое (то что ввели)  .toString() - и преобразуем все это в строку
 
-                if (getPlayerName.isEmpty()){
+                if (getPlayerName.isEmpty()) {
 
                     Toast.makeText(MainActivity.this, "Введите имя!", Toast.LENGTH_SHORT).show();
 
-                }
-                else {
+                } else {
                     Intent intent = new Intent(MainActivity.this, Easy_Level.class); // переход на страницу с уровнем Easy
 
                     intent.putExtra("playerName", getPlayerName); // вместе с переходм забираем имя которое ввел пользователь
@@ -45,28 +44,27 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
 
+
+            }
+        });
+
 // нажимаем на кнопку hardButton
-                hardButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String getPlayerName = playerName.getText().toString();// забираем введенные данные в строковую переменную(чтобы потом отображать и работать как с текстом). playerName - обращаемся к переменной в которую вводят имя .getText() - получаем ее текстовое содержимое (то что ввели)  .toString() - и преобразуем все это в строку
+        startHard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String getPlayerName = playerName.getText().toString();// забираем введенные данные в строковую переменную(чтобы потом отображать и работать как с текстом). playerName - обращаемся к переменной в которую вводят имя .getText() - получаем ее текстовое содержимое (то что ввели)  .toString() - и преобразуем все это в строку
 
-                        if (getPlayerName.isEmpty()){
+                if (getPlayerName.isEmpty()) {
 
-                            Toast.makeText(MainActivity.this, "Введите имя!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Введите имя!", Toast.LENGTH_SHORT).show();
 
-                        }
-                        else {
-                            Intent intent = new Intent(MainActivity.this, Hard_Level.class); // переход на страницу с уровнем Hard
+                } else {
+                    Intent intent = new Intent(MainActivity.this, Hard_Level.class); // переход на страницу с уровнем Hard
 
-                            intent.putExtra("playerName", getPlayerName); // вместе с переходм забираем имя которое ввел пользователь
+                    intent.putExtra("playerName", getPlayerName); // вместе с переходм забираем имя которое ввел пользователь
 
-                            startActivity(intent);
-                        }
-                    }
-                });
-
-
+                    startActivity(intent);
+                }
             }
         });
 

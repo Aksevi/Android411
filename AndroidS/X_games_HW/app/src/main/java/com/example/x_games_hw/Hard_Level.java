@@ -364,8 +364,8 @@ public class Hard_Level extends AppCompatActivity {
 
         boxPositions[selectPosition] = activePlayer; // boxPositions - это массив игрового поля. [selectPosition] - это ячейка куда игрок ставит крестик или нолик. activePlayer - это активный игрок (1 или 2 - игрок или компьютер соответственно). то есть когда ходит первый игрок 0 в boxPositions заменяется на 1 (или на 2 когда ходит компьютер) в соответствующей клетке. получается что то типа  boxPositions = {1, 2, 0, 2, 2, 1, 0, 1, 0} где 0 - незанятые клетки а 1 и 2 - занятые соответствующими символами Х или О
 
-        imageView.setBackgroundResource(R.drawable.white_box); // чтобы при выборе клетки в ней поле не заменялось значком а  значок ставился поверх фона. то есть этой командой мы снова ставим фон
-        imageView.setScaleType(ImageView.ScaleType.CENTER);// здесь центруем значок по центру фона
+        imageView.setBackgroundResource(R.drawable.white_box_hard); // чтобы при выборе клетки в ней поле не заменялось значком а  значок ставился поверх фона. то есть этой командой мы снова ставим фон
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);// здесь центруем значок по центру фона
 
 
 // если ходит игрок 1
@@ -413,7 +413,7 @@ public class Hard_Level extends AppCompatActivity {
 
             final int[] combination = winCombinationList.get(i); // создаем переменную combination и кладем в нее по очереди  индексы массива
 
-            if (boxPositions[combination[0]] == activePlayer && boxPositions[combination[1]] == activePlayer && boxPositions[combination[2]] == activePlayer && boxPositions[combination[4] == activePlayer] && boxPositions[combination[5] == activePlayer]) { // если в одном индексе вложенные индексы 0, 1, 2, 3, 4, 5 равны активному игроку (то есть в них проставлены цифры 1 или 2) то это победная комбинация. Напомню - изначально массив такой {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}/ по мере ходов нули заменяются на 1 и 2 в зависимости кто ходит.
+            if (boxPositions[combination[0]] == activePlayer && boxPositions[combination[1]] == activePlayer && boxPositions[combination[2]] == activePlayer && boxPositions[combination[3]] == activePlayer && boxPositions[combination[4]] == activePlayer){ // если в одном индексе вложенные индексы 0, 1, 2, 3, 4, 5 равны активному игроку (то есть в них проставлены цифры 1 или 2) то это победная комбинация. Напомню - изначально массив такой {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}/ по мере ходов нули заменяются на 1 и 2 в зависимости кто ходит.
                 resultWin = true; // если условие победной комбинации выполнено то resultWin меняем на true
             }
         }
@@ -636,8 +636,8 @@ public class Hard_Level extends AppCompatActivity {
         if (selectedImage != null) { // соотсветсвенно если не пустая значит ставит нолик ну и фон и центрует это все
             selectedImage.setImageResource(R.drawable.oimage);
             boxPositions[selectedPosition] = activePlayer;
-            selectedImage.setBackgroundResource(R.drawable.white_box);
-            selectedImage.setScaleType(ImageView.ScaleType.CENTER);
+            selectedImage.setBackgroundResource(R.drawable.white_box_hard);
+            selectedImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
             TextView textScore2 = findViewById(R.id.hardPhoneScore);
 

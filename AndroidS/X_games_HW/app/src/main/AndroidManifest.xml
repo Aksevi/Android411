@@ -24,9 +24,7 @@
         <activity
             android:name=".ResultSource"
             android:exported="false" />
-        <activity
-            android:name=".PlayingSource"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
