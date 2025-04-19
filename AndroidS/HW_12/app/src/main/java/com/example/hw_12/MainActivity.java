@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         showText = findViewById(R.id.ShowTextButton);
         radioGroup2 = findViewById(R.id.radioGroup2);
         switch2 = findViewById(R.id.switch2);
+        enterText = findViewById(R.id.enterText);
+
 
         onOffButton.setOnClickListener(new View.OnClickListener() { // жмем кнопку  onOffButton (activate/deactivate)
             @Override
@@ -78,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
                     radioGroup2.setVisibility(View.INVISIBLE);
                     switch2.setVisibility(View.INVISIBLE);
                     horizontalProgress.setVisibility(View.INVISIBLE);
+                    enterText.setVisibility(View.INVISIBLE);
+
 
                 }
             }
