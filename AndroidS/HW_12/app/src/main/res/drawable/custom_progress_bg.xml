@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- layer-list - тут все что относится к одному элементу. то есть в данном случае у нас прогресс бар и  его свойства - фон, цвет заполнения и тд-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- здесь ставим фон прогресс бара item  это сам элемент -->
+    <item android:id="@android:id/background"><!-- цвет фона -->
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp"/>
+            <solid android:color="#E1D2FC" />
+        </shape>
+    </item>
+    <!-- здесь цвет прогресс бара. item  это сам элемент -->
+    <item android:id="@android:id/progress"><!-- цвет самого прогресса -->
+       <scale android:scaleWidth="100%">
+           <!-- здесь указансам внешний вид 13 - 16 стр-->
+           <shape android:shape="rectangle">
+               <corners android:radius="6dp"/>
+               <solid android:color="#664FA3"/>
+           </shape>
+       </scale>
+    </item>
+
+</layer-list>
