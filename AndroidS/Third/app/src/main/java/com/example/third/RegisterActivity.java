@@ -35,7 +35,6 @@ public class RegisterActivity extends AppCompatActivity {
         buttonSave = findViewById(R.id.buttonSave);
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE); // sharedPreferences Это переменная, которая будет ссылаться на объект SharedPreferences. getSharedPreferences(...) Это метод, который говорит: «Эй, Android, дай-ка мне доступ к файлу с настройками под именем SHARED_PREF_NAME». SHARED_PREF_NAME  Это строковая переменная (типа String), содержащая имя твоего хранилища настроек. MODE_PRIVATE  Это режим доступа. Говорит: «Эти настройки только для моего приложения.
-
         String name = sharedPreferences.getString(KEY_NAME, null); // изначально (по умолчанию) name = null
 
         if (name != null) { // если данные есть (не пустые)
@@ -47,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() { // жмем на кнопку buttonSave
             @Override
             public void onClick(View v) {
+
 
                 SharedPreferences.Editor editor = sharedPreferences.edit(); // SharedPreferences.Editor - готовый интерфейс. editor имя. в нее кладем mypref - см.выше - sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE), а SHARED_PREF_NAME = "mypref"
 
