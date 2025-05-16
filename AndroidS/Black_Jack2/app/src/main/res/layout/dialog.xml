@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_Anotation"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_background"
+    android:layout_gravity="center"
+    android:layout_margin="20dp">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🃏 Правило Туза"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="10dp"
+        android:shadowColor="@color/black_green"
+        android:shadowRadius="6"
+        android:shadowDx="6"
+        android:shadowDy="6"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/dialog_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="По общепринятым правилам казино туз может стоить 1 или 11 очков — в зависимости от ситуации.\n\nЕсли сумма с тузом превышает 21, он автоматически считается за 1, чтобы не перебрать.\n\nПример: 9 + 2 + Туз + 2 + 4 = 18 (а не 28) благодаря гибкому тузу!"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:shadowColor="@color/black_green"
+            android:shadowRadius="6"
+            android:shadowDx="6"
+            android:shadowDy="6"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/dialog_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Понятно"
+        android:layout_marginTop="20dp"
+        style="@style/MyBlackJackButton"/>
+</LinearLayout>

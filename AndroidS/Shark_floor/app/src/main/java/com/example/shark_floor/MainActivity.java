@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,12 +42,17 @@ public class MainActivity extends AppCompatActivity {
         find_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float room1 = Float.parseFloat(firstRoom.getText().toString()); // первая кв в строку
-                float room2 =  Float.parseFloat(lastRoom.getText().toString()); // псоледняя кв в строку
-                float room3 =  Float.parseFloat(findingRoom.getText().toString()); // искомая кв в строку
-                float floors =  Float.parseFloat(floor.getText().toString()); // количество этажей в строку
-//                float onFirstFloor = Float.parseFloat(ApartmentOnFirst.getText().toString()); // кол-во кв на первом этаже в строку
+// проверка чтобы все поля были заполнены
+                if (floor.getText().toString().trim().isEmpty() || firstRoom.getText().toString().trim().isEmpty() || lastRoom.getText().toString().trim().isEmpty() || findingRoom.getText().toString().trim().isEmpty()){
+                    Toast.makeText(MainActivity.this, "Введите данные!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
+                    float room1 = Float.parseFloat(firstRoom.getText().toString()); // первая кв в строку
+                    float room2 = Float.parseFloat(lastRoom.getText().toString()); // псоледняя кв в строку
+                    float room3 = Float.parseFloat(findingRoom.getText().toString()); // искомая кв в строку
+                    float floors = Float.parseFloat(floor.getText().toString()); // количество этажей в строку
+//                float onFirstFloor = Float.parseFloat(ApartmentOnFirst.getText().toString()); // кол-во кв на первом этаже в строку
 
 // надо думать решать при неравномерном количествет кв на 1 этаже
 /*                boolean hasFirstFloor = onFirstFloor > 0;// булевая переменная на нулевое количесвто квартир на 1 этаже
@@ -65,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 float floorNumber = hasFirstFloor ? ((room3 - room1 - onFirstFloor) / flatsPerFloor) + 2 : ((room3 - room1) / flatsPerFloor) + 1;
                 result.setText(String.valueOf((int) Math.ceil(floorNumber))); // если на первом этаже есть кв (их больше 0) то считается то что после ?, если первый этаж пуст - то то что после :
                 }*/
-
-
 
                 float flatsPerFloor = (room2 - room1 + 1) / floors;// кол-во кв на этаже ищем
                 if (flatsPerFloor == 0) {
@@ -111,11 +115,8 @@ public class MainActivity extends AppCompatActivity {
                         dialog.cancel();
                     }
                 });
-
         AlertDialog dialog = builder.create(); // создаем переменную типа  AlertDialog с именем  dialog и через нее обращаемся к builder из стр 73
         dialog.show();
-
-
 
     }
 }

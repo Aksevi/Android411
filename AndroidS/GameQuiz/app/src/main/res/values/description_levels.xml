@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 1 уровень -->
+    <string name="level_one">Choose the number that is higher.\nThe polls can be repeated until you score 20 points.</string>  <!-- аннотация перед уровнем -->
+    <string name="level_one_end">"Поздравляем! Уровень пройден!\nDid you know that the number 7 is considered the happiest number? There are 7 days in a week, 7 continents, 7 colors of the rainbow, 7 musical notes and much more.
+ Also, the number 7 is psychologically impressive to most people in the world.</string>  <!-- после прохождения уровня -->
+
+    <!-- 2 уровень -->
+    <string name="level_two">Choose the number that is higher.\nThe polls can be repeated until you score 20 points.</string>  <!-- аннотация перед уровнем -->
+    <string name="level_two_end">"Congratulations! The level is passed!\nDid you know that there is no zero in Roman numerals?"</string>  <!-- после прохождения уровня -->
+
+    <!-- 3 уровень -->
+    <string name="level_three">Select a fraction with a higher value.\nThe polls can be repeated until you score 20 points.</string>  <!-- аннотация перед уровнем -->
+    <string name="level_three_end">"Congratulations! The level is passed!Operations on fractions in the Middle Ages were considered the most difficult area of mathematics"</string>  <!-- после прохождения уровня -->
+
+    <!-- 4 уровень -->
+    <string name="level_four">Choose an edible item.\nThe polls can be repeated until you score 20 points.</string>  <!-- аннотация перед уровнем -->
+    <string name="level_four_end">"Congratulations! The level is passed!\nEverything can be eaten. It's just that some items are only used once."</string>  <!-- после прохождения уровня -->
+
+</resources>

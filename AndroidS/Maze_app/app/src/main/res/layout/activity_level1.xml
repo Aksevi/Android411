@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Level_1"
+    >
+
+    <!--Создаём GridLayout — это контейнер, который размещает дочерние элементы в таблице (сетки).-->
+    <GridLayout
+        android:id="@+id/grid_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="5"
+        android:columnCount="5"
+        android:layout_margin="16dp"
+        android:padding="4dp"
+        android:background="#EEEEEE"
+        >
+</GridLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!--это для сетки силами кода-->
+    <!--<com.example.maze_app.GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->

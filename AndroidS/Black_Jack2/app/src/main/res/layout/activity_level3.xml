@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Level3">
+
+    <!--основной слой-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_border"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/layout_border">
+
+            <!--кнопка назад и ставка-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:text="Back"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:shadowColor="#55000000"
+                android:shadowRadius="6"
+                android:shadowDy="10"
+                android:shadowDx="10"
+                android:background="@drawable/transparent_button"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBet"
+                style="@style/MyBlackJackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginEnd="20dp"
+                android:text="Сделать ставку"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:shadowColor="#55000000"
+                android:shadowRadius="6"
+                android:shadowDy="10"
+                android:shadowDx="10"
+                android:background="@drawable/transparent_button"
+                />
+
+
+        </LinearLayout>
+
+        <!--название-->
+        <TextView
+            android:id="@+id/nameGameLevel3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:padding="5dp"
+            android:text="Black Jack Primitive"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#012103"
+            android:shadowColor="#55000000"
+            android:shadowRadius="6"
+            android:shadowDy="10"
+            android:shadowDx="10"/>
+
+        <!--первый горизонтальный слой - с данными игрока-->
+        <LinearLayout
+            android:id="@+id/playerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:background="@drawable/layout_border"
+            android:elevation="8dp"> <!-- Добавляем тень -->
+            <!--первый вертикальный слой во вложенном горизонтальном в нем текст "имя игрока" и само имя-->
+            <LinearLayout
+                android:id="@+id/playerNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <!--текстовые поля "имя игрока" и само имя -->
+                <TextView
+                    android:id="@+id/playerName3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Имя игрока"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+
+                <TextView
+                    android:id="@+id/playerNameShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+            </LinearLayout>
+
+            <!--второй вертикальный слой  в нем очки игрока-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <!--текстовые поля во втором вертикально слое - очки и значение-->
+                <TextView
+                    android:id="@+id/playerScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Очки"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+
+                <TextView
+                    android:id="@+id/playerScoreShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="0"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+            </LinearLayout>
+
+            <!--третий вертикальный слой во вложенном горизонтальном в нем текст "Cash" и сумма-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <!--текстовые поля в третьем вертикальном слое - Cash и значение-->
+                <TextView
+                    android:id="@+id/playerBank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Cash"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+
+                <TextView
+                    android:id="@+id/playerBankShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text=""
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--второй горизонтальный слой - здесь будет сумма ставок-->
+        <LinearLayout
+            android:id="@+id/layoutBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <!--текстовый слой. здесь будет сумма ставок-->
+            <TextView
+                android:id="@+id/textBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="Банк"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#012103"
+                android:shadowColor="#55000000"
+                android:shadowRadius="6"
+                android:shadowDy="10"
+                android:shadowDx="10"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDoubleBet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:text="Удвоить ставку"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:shadowColor="#55000000"
+                android:shadowRadius="6"
+                android:shadowDy="10"
+                android:shadowDx="10"
+                android:background="@drawable/transparent_button"
+                />
+
+        </LinearLayout>
+
+        <!--третий горизонтальный слой -  с данными дилера-->
+        <LinearLayout
+            android:id="@+id/dealerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/layout_border"
+            android:elevation="8dp"> <!-- Добавляем тень -->
+            <!--первый вертикальный слой с данными (имя) дилера-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <!--текст "имя дилера"-->
+                <TextView
+                    android:id="@+id/dealerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Имя дилера"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+                <!-- само имя дилера-->
+                <TextView
+                    android:id="@+id/dealerNameShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+            </LinearLayout>
+            <!--первый вертикальный слой с данными (очки) дилера-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <!--второй вертикальный слой текст "очки дилера"-->
+                <TextView
+                    android:id="@+id/dealerScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Очки"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+                <!-- значение очков дилера-->
+                <TextView
+                    android:id="@+id/dealerScoreShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="0"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <!--третий вертикальный слой с данными (Cash) дилера-->
+                <TextView
+                    android:id="@+id/dealerBank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Cash"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+
+                <TextView
+                    android:id="@+id/dealerBankShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text=""
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:textColor="#012103"
+                    android:shadowColor="#55000000"
+                    android:shadowRadius="6"
+                    android:shadowDy="10"
+                    android:shadowDx="10"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--четвертый горизонтальный слой с результатом-->
+        <LinearLayout
+            android:id="@+id/resultLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="Результат: "
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#012103"
+                android:shadowColor="#55000000"
+                android:shadowRadius="6"
+                android:shadowDy="10"
+                android:shadowDx="10"
+                />
+        </LinearLayout>
+        <!--пятый горизонтальный слой с кнопками-->
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:text="Взять карту"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:shadowColor="#55000000"
+                android:shadowRadius="6"
+                android:shadowDy="10"
+                android:shadowDx="10"
+                android:background="@drawable/transparent_button"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRestart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="Сдать карты"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textAllCaps="false"
+                android:shadowColor="#55000000"
+                android:shadowRadius="6"
+                android:shadowDy="10"
+                android:shadowDx="10"
+                android:background="@drawable/transparent_button" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonStop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:text="Хватит"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:shadowColor="#55000000"
+                android:shadowRadius="6"
+                android:shadowDy="10"
+                android:shadowDx="10"
+                android:background="@drawable/transparent_button" />
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/switchdealerMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Агрессивный дилер"
+            android:textStyle="bold"
+            android:shadowColor="#55000000"
+            android:shadowRadius="6"
+            android:shadowDy="10"
+            android:shadowDx="10"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:checked="false"
+            />
+
+        <!--вложенный горизонтальный слой-->
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

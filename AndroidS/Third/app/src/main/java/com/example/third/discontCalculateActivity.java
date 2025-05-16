@@ -103,12 +103,12 @@ public class discontCalculateActivity extends AppCompatActivity {
                 }
 // дальше бахаем как обычно - парсим строку в число и понеслась
                 int price = Integer.parseInt(cost);// преобразуем строковое значение в числовое/ по сути сюда попадает число которе ввели в текстовое поле но уже не в виде строки а в виде числа
-                double temp = 0; // временная переменная для рассчета скидки
+                double temp; // временная переменная для рассчета скидки
 /*                double discont;*/
 
 
                 SharedPreferences.Editor editor = sharedPreferences.edit(); // SharedPreferences.Editor - готовый интерфейс. editor имя. в нее кладем mypref - см.выше - sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE), а SHARED_PREF_NAME = "mypref"
-                editor.putString(KEY_SUMM, enterCost.getText().toString()); // получаем из editTextName текстовое содержимое преводим в String и кладем в editor
+                editor.putString(KEY_SUMM, enterCost.getText().toString()); // получаем из поля enterCost(введите сумму) текстовое содержимое преводим в String и кладем в editor
                 editor.apply(); // применяем изменения
 
                 if (price >= 500 && price < 1000){ // если сумма покупки больше  или равна 500 но меньше 1000
@@ -118,7 +118,8 @@ public class discontCalculateActivity extends AppCompatActivity {
 //                    String result1 = String.valueOf(temp); // переводим в строку значение temp (саму скидку) и сохраняем его в result1
 //                    discontSumm.setText("Ваша скидка составила: " + result1); // в поле "сумма скидки" передаем содержимое result1
 
-// это аналог строк 45-48 но с локалью
+
+                    // это аналог строк 116-119 но с локалью
                     Locale ruLocale = new Locale("ru", "RU"); // создаем локаль для русского стандарта
                     NumberFormat ruCurrencyFormat = NumberFormat.getCurrencyInstance(ruLocale); // Создаём форматтер валюты под российскую локаль. Теперь ruCurrencyFormat (это просто имя) умеет автоматически подставлять символ рубля, расставлять пробелы и форматировать числа красиво, как мы привыкли в России.
                     String result = ruCurrencyFormat.format(price - temp); // Вычисляем цену со скидкой и форматируем в валюту
@@ -126,7 +127,7 @@ public class discontCalculateActivity extends AppCompatActivity {
                     String result1 = ruCurrencyFormat.format(temp); // Форматируем саму скидку в валюту
                     discontSumm.setText("Ваша скидка составила: " + result1); // Выводим размер скидки в поле "сумма скидки"
 
-                    editor.putString(KEY_COST_DISCONT, discontCost.getText().toString()); // получаем из editTextName текстовое содержимое преводим в String и кладем в editor
+                    editor.putString(KEY_COST_DISCONT, discontCost.getText().toString()); // получаем из editTextName текстовое содержимое преводим в String и кладем в editor(то есть сохраняем)
                     editor.putString(KEY_DISCONT, discontSumm.getText().toString()); // получаем из editTextName текстовое содержимое преводим в String и кладем в editor
                     editor.apply();
 
