@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group1">
+        <item android:id="@+id/fragment_1"
+            android:icon="@drawable/shark"
+            android:title="Fragment 1"/>
+        <item android:id="@+id/fragment_2"
+            android:icon="@drawable/shark"
+            android:title="зк"/>
+    </group>
+    <group android:id="@+id/group2">
+        <item android:id="@+id/fragment_3"
+            android:icon="@drawable/shark_foreground"
+            android:title="Fragment 3"/>
+    </group>
+
+</menu>

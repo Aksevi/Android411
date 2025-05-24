@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Menu_DZ_20</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="drawer_close">Close Drawer</string>
+    <string name="drawer_open">Open Drawer</string>
+
+    <string name="calculate">Calculate</string>
+    <string name="calculate_price">Calculate Price</string>
+    <string name="reset">Reset</string>
+    <string name="enter_weigth">Enter Weight</string>
+    <string name="enter_price">Enter Price</string>
+    <string name="price_per_kg">Price per kg</string>
+</resources>
