@@ -27,13 +27,13 @@ public class Fragment_2 extends Fragment {
     private Button resultButton, resetButton;
     private EditText enterWeight, enterPrice;
     private TextView resultText;
-    private TextView unitWeight;
+    private TextView unitWeight; // это переменная поля где гр. и шт. написаны
 //    private TextView unitWeight;
 //    private TextView resultText;
 
     private FloatingActionButton floatingActionButton;
 
-    private int type = 1;
+    private int type = 1; // эта переменная нужна чтобы переключаться когда floatingbutton выбираем что считать цену за кг или за шт
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -107,9 +107,9 @@ public class Fragment_2 extends Fragment {
         pricePerKg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
-                type = 1;
-                enterPrice.setText("");
+                dialog.dismiss(); // закрываем диалог
+                type = 1; // считаем цену за кг
+                enterPrice.setText(""); // устанавливаем тексты в поля
                 enterWeight.setText("");
                 resultText.setText("Цена за кг.");
                 enterWeight.setHint("Enter Weight");
@@ -121,9 +121,9 @@ public class Fragment_2 extends Fragment {
         pricePerPiece.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
-                type = 2;
-                enterPrice.setText("");
+                dialog.dismiss(); // закрываем диалог
+                type = 2; // считаем цену за шт
+                enterPrice.setText(""); // устанавливаем тексты в поля
                 enterWeight.setText("");
                 resultText.setText("Цена за шт.");
                 enterWeight.setHint("Enter the number of pieces");
@@ -135,7 +135,7 @@ public class Fragment_2 extends Fragment {
     // метод рассчета цены
     private void calculatePrice() {
 
-        if (type == 1) {
+        if (type == 1) { // если выбран в всплфывайке пункт за кг
 
             String weightString = enterWeight.getText().toString().trim(); // текст из полей введите вес и введите цену парсим в строки
             String priceString = enterPrice.getText().toString().trim();
@@ -144,15 +144,15 @@ public class Fragment_2 extends Fragment {
                 Toast.makeText(getContext(), "Введите данные полностью", Toast.LENGTH_SHORT).show(); // ВНИМАТЕЛЬНО! В ФРАГМЕНТАХ ВСПЛЫВАЙКА ПИШЕТСЯ НЕ ЧЕРЕЗ THIS, А ЧЕРЕЗ getContext()!!!!
                 return;
             }
-//==========блок Try/ Catch лучше поставить чтобы не было проблемм с буквами вместо чисел============
+//==========блок Try/ Catch лучше поставить чтобы не было проблем с буквами вместо чисел============
 //И вот почему - потому что юзеры хитрые и могут вставить букву методом копировать вставить даже если
 // программно ограничить тип EditText===============================================================
             try {
-                float weight = Float.parseFloat(weightString);
+                float weight = Float.parseFloat(weightString); // вес и цена в флоат потому что число может быть не целым
                 float price = Float.parseFloat(priceString);
 
                 if (weight > 0) {
-                    float pricePerKg = (1000 * price) / weight;
+                    float pricePerKg = (1000 * price) / weight; // сама формула рассчета
                     resultText.setText(String.format("Цена за кг: %.2f", pricePerKg));
                 } else {
                     resultText.setText("Вес должен быть больше нуля");
@@ -160,8 +160,8 @@ public class Fragment_2 extends Fragment {
             } catch (NumberFormatException e) {
                 Toast.makeText(requireContext(), "Неверный формат числа", Toast.LENGTH_SHORT).show(); // ВНИМАТЕЛЬНО! В ФРАГМЕНТАХ ВСПЛЫВАЙКА ПИШЕТСЯ НЕ ЧЕРЕЗ THIS А ЧЕРЕЗ getContext()!!!!!
             }
-        } else  {
 
+        } else  { // если выбран в всплывайке пункт цена за штуку
             String weightString = enterWeight.getText().toString().trim(); // текст из полей введите вес и введите цену парсим в строки
             String priceString = enterPrice.getText().toString().trim();
 
@@ -173,11 +173,11 @@ public class Fragment_2 extends Fragment {
 //И вот почему - потому что юзеры хитрые и могут вставить букву методом копировать вставить даже если
 // программно ограничить тип EditText===============================================================
             try {
-                int weight = Integer.parseInt(weightString); // здесь weight это количество штук
-                float price = Float.parseFloat(priceString);
+                int weight = Integer.parseInt(weightString); // здесь weight это количество штук поэтому в int
+                float price = Float.parseFloat(priceString); // цена в флоат потому что может быть не целым числом
 
                 if (weight > 0) {
-                    float pricePerPiece =price / weight;
+                    float pricePerPiece =price / weight; // сама формула рассчета
                     resultText.setText(String.format("Цена за шт: %.2f", pricePerPiece));
                 } else {
                     resultText.setText("количество  должно быть больше нуля");
