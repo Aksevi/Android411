@@ -4,15 +4,15 @@
     <group android:id="@+id/group1">
         <item android:id="@+id/fragment_1"
             android:icon="@drawable/shark"
-            android:title="Fragment 1"/>
+            android:title="Fragment 1 - SeekBar"/>
         <item android:id="@+id/fragment_2"
             android:icon="@drawable/shark"
-            android:title="зк"/>
+            android:title="Fragment 2 - Рассчет цены"/>
     </group>
     <group android:id="@+id/group2">
         <item android:id="@+id/fragment_3"
             android:icon="@drawable/shark_foreground"
-            android:title="Fragment 3"/>
+            android:title="Fragment 3 - Recycle View"/>
     </group>
 
 </menu>

@@ -43,15 +43,14 @@ public class MainActivity extends AppCompatActivity {
         // Иконка в Toolbar может быть не той, что ожидается (например, иконка "назад" или "пользователь").
         //✅ С ним: Android точно знает: "ага, у нас есть выдвижное меню, значит ставим три полоски и связываем поведение кнопки с открытием/закрытием меню"
         //Раньше у тебя была иконка пользователя и три точки — потому что Toolbar использовался как обычный ActionBar, без меню Drawer.
-        //
-
         // new ActionBarDrawerToggle(...)	Создаёт связку "меню ↔ тулбар"
         //drawerLayout.addDrawerListener(...)	Подключает эту связку как слушателя
         // syncState()	Обновляет иконку и синхронизирует состояние
 
         //**********************************************************************************************
 
-        replaceFragment(new FragmentFirstPage());//задаём стартовый фрагмент (типа "домашняя страница").
+//        replaceFragment(new FragmentFirstPage());//задаём стартовый фрагмент (типа "домашняя страница").
+        replaceFragment(new FragmentSecondPage() );//задаём стартовый фрагмент (типа "домашняя страница").
 
 //============================ Обработка пунктов меню===============================================
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -63,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.closeDrawer(GravityCompat.START); // закрывает меню после выбора
                 } else if (item.getItemId() == R.id.second_page) {
                     replaceFragment(new FragmentSecondPage()); // Переключаешь на 2 фрагмент.
+                    drawerLayout.closeDrawer(GravityCompat.START);// закрывает меню после выбора
+                } else if (item.getItemId() == R.id.third_page) {
+                    replaceFragment(new FragmentThirdPage()); // Переключаешь на 3 фрагмент.
+                    drawerLayout.closeDrawer(GravityCompat.START);// закрывает меню после выбора
+                }
+                else if (item.getItemId() == R.id.fourth_page) {
+                    replaceFragment(new FragmentFourthPage()); // Переключаешь на 4 фрагмент.
                     drawerLayout.closeDrawer(GravityCompat.START);// закрывает меню после выбора
                 }
                 return false;

@@ -6,5 +6,16 @@
     </style>
 
     <style name="Theme.Menu_DZ_20" parent="Base.Theme.Menu_DZ_20" />
+
+    <!--ПОДКЛЮЧАЕМ СТИЛЬ ДЛЯ АНИМАЦИИ которую создали для FloatingActionButton -->
+    <style name="floatingWindowDialogAnimation">
+        <item name="android:windowEnterAnimation">
+            @anim/windows_up
+        </item>
+
+        <item name="android:windowExitAnimation">
+            @anim/windows_down
+        </item>
+    </style>
     
 </resources>

@@ -1,16 +1,23 @@
 package com.example.menu_dz_20;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class Fragment_2 extends Fragment {
@@ -20,6 +27,13 @@ public class Fragment_2 extends Fragment {
     private Button resultButton, resetButton;
     private EditText enterWeight, enterPrice;
     private TextView resultText;
+    private TextView unitWeight;
+//    private TextView unitWeight;
+//    private TextView resultText;
+
+    private FloatingActionButton floatingActionButton;
+
+    private int type = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +49,9 @@ public class Fragment_2 extends Fragment {
         enterPrice = view.findViewById(R.id.enter_price);
         enterWeight = view.findViewById(R.id.enter_weight);
         resultText = view.findViewById(R.id.result_text);
+        unitWeight = view.findViewById(R.id.unit_weight);
+
+        floatingActionButton = view.findViewById(R.id.floatingActionButton);
 
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,38 +66,125 @@ public class Fragment_2 extends Fragment {
             @Override
             public void onClick(View v) {
 
-                calculatePricePerKg();
+//                calculatePricePerKg();
+                calculatePrice();
+            }
+        });
+
+// жмем на кнопку
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showSelectionWindow();
             }
         });
 
         return view;
     }
 
-    // метод рассчета цены за кг
-    private void calculatePricePerKg() {
+    //==================================================================================================
+// ====================метод вызова диалого через кнопку floatingActionButton=======================
+    private void showSelectionWindow() {
 
-        String weightString = enterWeight.getText().toString().trim(); // текст из полей введите вес и введите цену парсим в строки
-        String priceString = enterPrice.getText().toString().trim();
+        final Dialog dialog = new Dialog(getContext()); // создаем переменную диалога. getContext() потому что фрагмент. вне фрагмента был бы this
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // убираем заголовок окна диалога
+        dialog.setContentView(R.layout.floating_window_dialog); // подключаем наш слой с диалогом
 
-        if (weightString.isEmpty() || priceString.isEmpty()) {
-            Toast.makeText(getContext(), "Введите данные полностью", Toast.LENGTH_SHORT).show(); // ВНИМАТЕЛЬНО! В ФРАГМЕНТАХ ВСПЛЫВАЙКА ПИШЕТСЯ НЕ ЧЕРЕЗ THIS, А ЧЕРЕЗ getContext()!!!!
-            return;
-        }
+        dialog.show();// вызываем диалог
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT); // программно установили ширину и высоту диалогового окна
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // убираем фон (без этой строки углы закруглеты но под ними виден белый фон)
+        dialog.getWindow().getAttributes().windowAnimations = R.style.floatingWindowDialogAnimation; // DialogAnimation мы писали в themes в  теге <style>. соответственно мы это и подключаем
+        dialog.getWindow().setGravity(Gravity.BOTTOM); // опускаем окно диалога вниз
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~оживляем элементы в самом диалоговом окне.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// получаем доступ к элементам в самом диалоге (это в слое диалога floating_window_dialog.xml)
+
+        TextView pricePerKg = dialog.findViewById(R.id.price_per_kg);
+        TextView pricePerPiece = dialog.findViewById(R.id.price_per_piece);
+
+// обрабатываем клик мышкой по элементам
+        pricePerKg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                type = 1;
+                enterPrice.setText("");
+                enterWeight.setText("");
+                resultText.setText("Цена за кг.");
+                enterWeight.setHint("Enter Weight");
+                unitWeight.setText("gr.");
+
+            }
+        });
+
+        pricePerPiece.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                type = 2;
+                enterPrice.setText("");
+                enterWeight.setText("");
+                resultText.setText("Цена за шт.");
+                enterWeight.setHint("Enter the number of pieces");
+                unitWeight.setText("pc.");
+            }
+        });
+    }
+
+    // метод рассчета цены
+    private void calculatePrice() {
+
+        if (type == 1) {
+
+            String weightString = enterWeight.getText().toString().trim(); // текст из полей введите вес и введите цену парсим в строки
+            String priceString = enterPrice.getText().toString().trim();
+
+            if (weightString.isEmpty() || priceString.isEmpty()) {
+                Toast.makeText(getContext(), "Введите данные полностью", Toast.LENGTH_SHORT).show(); // ВНИМАТЕЛЬНО! В ФРАГМЕНТАХ ВСПЛЫВАЙКА ПИШЕТСЯ НЕ ЧЕРЕЗ THIS, А ЧЕРЕЗ getContext()!!!!
+                return;
+            }
 //==========блок Try/ Catch лучше поставить чтобы не было проблемм с буквами вместо чисел============
 //И вот почему - потому что юзеры хитрые и могут вставить букву методом копировать вставить даже если
 // программно ограничить тип EditText===============================================================
-        try {
-            float weight = Float.parseFloat(weightString);
-            float price = Float.parseFloat(priceString);
+            try {
+                float weight = Float.parseFloat(weightString);
+                float price = Float.parseFloat(priceString);
 
-            if (weight > 0) {
-                float pricePerKg = (1000 * price) / weight;
-                resultText.setText(String.format("Цена за кг: %.2f", pricePerKg));
-            } else {
-                resultText.setText("Вес должен быть больше нуля");
+                if (weight > 0) {
+                    float pricePerKg = (1000 * price) / weight;
+                    resultText.setText(String.format("Цена за кг: %.2f", pricePerKg));
+                } else {
+                    resultText.setText("Вес должен быть больше нуля");
+                }
+            } catch (NumberFormatException e) {
+                Toast.makeText(requireContext(), "Неверный формат числа", Toast.LENGTH_SHORT).show(); // ВНИМАТЕЛЬНО! В ФРАГМЕНТАХ ВСПЛЫВАЙКА ПИШЕТСЯ НЕ ЧЕРЕЗ THIS А ЧЕРЕЗ getContext()!!!!!
             }
-        } catch (NumberFormatException e){
-            Toast.makeText(requireContext(),"Неверный формат числа", Toast.LENGTH_SHORT).show(); // ВНИМАТЕЛЬНО! В ФРАГМЕНТАХ ВСПЛЫВАЙКА ПИШЕТСЯ НЕ ЧЕРЕЗ THIS А ЧЕРЕЗ getContext()!!!!!
+        } else  {
+
+            String weightString = enterWeight.getText().toString().trim(); // текст из полей введите вес и введите цену парсим в строки
+            String priceString = enterPrice.getText().toString().trim();
+
+            if (weightString.isEmpty() || priceString.isEmpty()) {
+                Toast.makeText(getContext(), "Введите данные полностью", Toast.LENGTH_SHORT).show(); // ВНИМАТЕЛЬНО! В ФРАГМЕНТАХ ВСПЛЫВАЙКА ПИШЕТСЯ НЕ ЧЕРЕЗ THIS, А ЧЕРЕЗ getContext()!!!!
+                return;
+            }
+//==========блок Try/ Catch лучше поставить чтобы не было проблемм с буквами вместо чисел============
+//И вот почему - потому что юзеры хитрые и могут вставить букву методом копировать вставить даже если
+// программно ограничить тип EditText===============================================================
+            try {
+                int weight = Integer.parseInt(weightString); // здесь weight это количество штук
+                float price = Float.parseFloat(priceString);
+
+                if (weight > 0) {
+                    float pricePerPiece =price / weight;
+                    resultText.setText(String.format("Цена за шт: %.2f", pricePerPiece));
+                } else {
+                    resultText.setText("количество  должно быть больше нуля");
+                }
+            } catch (NumberFormatException e) {
+                Toast.makeText(requireContext(), "Неверный формат числа", Toast.LENGTH_SHORT).show(); // ВНИМАТЕЛЬНО! В ФРАГМЕНТАХ ВСПЛЫВАЙКА ПИШЕТСЯ НЕ ЧЕРЕЗ THIS А ЧЕРЕЗ getContext()!!!!!
+            }
         }
 //====================================================================================================
     }
