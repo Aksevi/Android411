@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        replaceFragment(firstFragment); // эта строчка нужна если 20 стр есть/ она сразу запускает на экране фрагмент 1
+        replaceFragment(firstFragment); // эта строчка нужна если 24 стр есть/ она сразу запускает на экране фрагмент 1
 
 // доступ к кнопкам
         firstFragmentBtn = findViewById(R.id.fragment1Btn);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         firstFragmentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Fragment1  firstFragment = new Fragment1();// эта строчка нужна если 20 стр нет
+//                Fragment1  firstFragment = new Fragment1();// эта строчка нужна если 24 стр нет
                 replaceFragment(firstFragment);
 
             }

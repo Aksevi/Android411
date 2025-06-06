@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="anotation_text">Уважаемый игрок, помни - Туз — особенная карта. В блэкджеке он может стоить или 1, или 11 очков — в зависимости от того, что выгоднее.
-Если сумма карт с тузом не превышает 21, туз считается как 11.
-Если же сумма превышает 21, туз автоматически превращается в 1, чтобы избежать перебора.</string>  <!-- аннотация перед игрой пока не использовал-->
+    <string name="anotation_text">Dear player, it’s important to remember: the Ace is unique. In Blackjack, it’s a flexible card that can be valued as either 1 or 11, whichever is best for your hand. As long as the total value of your hand with the Ace is 21 or under, it’s counted as 11.
+But if that total goes over 21, the Ace automatically becomes a 1 to keep you from busting.</string>  <!-- аннотация перед игрой пока не использовал-->
 
 </resources>

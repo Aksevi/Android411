@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         //**********************************************************************************************
 
 //        replaceFragment(new FragmentFirstPage());//задаём стартовый фрагмент (типа "домашняя страница").
-        replaceFragment(new FragmentSecondPage() );//задаём стартовый фрагмент (типа "домашняя страница").
+        replaceFragment(new FragmentFirstPage() );//задаём стартовый фрагмент (типа "домашняя страница").
 
 //============================ Обработка пунктов меню===============================================
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

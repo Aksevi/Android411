@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Блэк Джек</string>
+    <string name="back">Назад</string>
+    <string name="deal_again">Сдать заново</string>
+    <string name="blackjack_level_1">Блэк Джек Уровень 1</string>
+    <string name="player_name">Имя Игрока:</string>
+    <string name="player_score">Счёт: 0</string>
+    <string name="cash">Наличные:</string>
+    <string name="player_cards">Карты Игрока:</string>
+    <string name="bank">Банк:</string>
+    <string name="dealer_name">Имя Дилера:</string>
+    <string name="dealer_score">Счёт: 0</string>
+    <string name="dealer_cash">Наличные:</string>
+    <string name="dealer_cards">Карты Дилера:</string>
+    <string name="hit">Ещё</string>
+    <string name="stop">Хватит</string>
+    <string name="bet">Ставка</string>
+    <string name="double_bet">Удвоить</string>
+    <string name="lvl3_back">Назад</string>
+    <string name="black_jack_primitive">Блэк Джек Primitive</string>
+    <string name="_0">0</string>
+    <string name="dealer_0">0</string>
+    <string name="agressive_dealer">Агрессивный дилер</string>
+</resources>

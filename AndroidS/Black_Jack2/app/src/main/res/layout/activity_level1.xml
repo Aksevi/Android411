@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_stroke_black_press_light_green"
                 android:padding="10dp"
-                android:text="Back"
+                android:text="@string/back"
                 android:textSize="18sp"
                 android:textStyle="bold" />
             <!--Пустой View  для того чтобы текстовые кнопки раздвинуть-->
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_stroke_black_press_light_green"
                 android:padding="10dp"
-                android:text="Сдать заново"
+                android:text="@string/deal_again"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
             android:id="@+id/gameName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Blackjack Level 1"
+            android:text="@string/blackjack_level_1"
             android:textSize="24sp"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
@@ -73,7 +73,7 @@
                 android:id="@+id/playerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Player Name: "
+                android:text="@string/player_name"
                 android:textSize="18sp"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
@@ -83,7 +83,7 @@
                 android:id="@+id/playerScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Очки: 0"
+                android:text="@string/player_score"
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
                 android:layout_weight="1"/>
@@ -92,7 +92,7 @@
                 android:id="@+id/playerBankShow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cash: "
+                android:text="@string/cash"
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
                 android:layout_weight="1"
@@ -105,7 +105,7 @@
             android:id="@+id/playerCards"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Player Cards:"
+            android:text="@string/player_cards"
             android:textSize="20sp"
             android:textColor="#FFD700"
             android:layout_marginBottom="8dp"/>
@@ -129,7 +129,7 @@
                 android:id="@+id/textBank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Банк: "
+                android:text="@string/bank"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
@@ -148,7 +148,7 @@
                 android:id="@+id/dealerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dealer Name: "
+                android:text="@string/dealer_name"
                 android:textSize="18sp"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
@@ -158,7 +158,7 @@
                 android:id="@+id/dealerScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Очки: 0"
+                android:text="@string/dealer_score"
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
                 android:layout_weight="1"
@@ -168,7 +168,7 @@
                 android:id="@+id/dealerBankShow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cash: "
+                android:text="@string/dealer_cash"
                 android:textSize="18sp"
                 android:textColor="#FFFFFF"
                 android:layout_weight="1"
@@ -181,7 +181,7 @@
             android:id="@+id/dilerCards"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dealer Cards:"
+            android:text="@string/dealer_cards"
             android:textSize="20sp"
             android:textColor="#FFD700"
             android:layout_marginBottom="8dp"/>
@@ -208,7 +208,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginEnd="10dp"
-                android:text="Еще карту"
+                android:text="@string/hit"
                 android:backgroundTint="#4CAF50"
                 android:textColor="#FFFFFF"
                 />
@@ -219,7 +219,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="10dp"
-                android:text="Стоп"
+                android:text="@string/stop"
                 android:textAllCaps="false"
                 android:backgroundTint="#F44336"
                 android:textColor="#FFFFFF"/>
@@ -239,7 +239,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
                 android:backgroundTint="#4CAF50"
-                android:text="Сделать ставку"
+                android:text="@string/bet"
                 android:textColor="#FFFFFF" />
 
             <Button
@@ -249,7 +249,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:backgroundTint="#F44336"
-                android:text="Удвоить ставку"
+                android:text="@string/double_bet"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF" />
         </LinearLayout>

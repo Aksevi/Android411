@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Black_Jack</string>
+    <string name="back">Back</string>
+    <string name="deal_again">Deal again</string>
+    <string name="blackjack_level_1">Blackjack Level 1</string>
+    <string name="player_name">Player Name:</string>
+    <string name="player_score">Score: 0</string>
+    <string name="cash">Cash:</string>
+    <string name="player_cards">Player Cards:</string>
+    <string name="bank">Bank:</string>
+    <string name="dealer_name">Dealer Name:</string>
+    <string name="dealer_score">Score: 0</string>
+    <string name="dealer_cash">Cash:</string>
+    <string name="dealer_cards">Dealer Cards:</string>
+    <string name="hit">Hit</string>
+    <string name="stop">Stop</string>
+    <string name="bet">Bet</string>
+    <string name="double_bet">Double Bet</string>
+    <string name="lvl3_back">Back</string>
+    <string name="black_jack_primitive">Black Jack Primitive</string>
+    <string name="_0">0</string>
+    <string name="dealer_0">0</string>
+    <string name="agressive_dealer">Agressive Dealer</string>
 </resources>

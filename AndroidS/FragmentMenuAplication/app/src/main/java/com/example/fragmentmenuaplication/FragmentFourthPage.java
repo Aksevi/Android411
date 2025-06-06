@@ -7,58 +7,63 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.NumberPicker;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentFourthPage#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class FragmentFourthPage extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+// переменные для чисел
+    TextView textViewNumberPicker; //текст, в котором будет отображаться выбранное число
+    NumberPicker numberPicker; //собственно, колесико с числами.
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    // переменные для языков
+    TextView textViewCountryPicker; //textViewCountryPicker — это элемент текста, в котором будешь показывать выбранный язык (или страну)
+    NumberPicker cityPicker; //cityPicker — вот тут главный герой, NumberPicker. Это такой бегунок с цифрами, где пользователь может выбрать число (в твоём случае — индекс языка).
 
-    public FragmentFourthPage() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentFourPage.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentFourthPage newInstance(String param1, String param2) {
-        FragmentFourthPage fragment = new FragmentFourthPage();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fourth_page, container, false);
+
+        view = inflater.inflate(R.layout.fragment_fourth_page, container, false);
+
+//Подключаешь TextView и NumberPicker по ID из XML, чтобы можно было с ними работать в коде.
+        textViewNumberPicker = view.findViewById(R.id.textview_number_picker);
+        numberPicker = view.findViewById(R.id.number_picker);
+//Настройка NumberPicker
+        numberPicker.setMaxValue(10); // макс значение
+        numberPicker.setMinValue(0); // мин значение
+        numberPicker.setValue(5); // значение по умолчанию
+
+// Слушатель изменения значения. устанавливаем обработчик событий: каждый раз, когда пользователь меняет значение на NumberPicker, текст в TextView обновляется и показывает: "Selected: " + newVal(новое значение)
+        numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                textViewNumberPicker.setText("Selected: " + newVal);
+            }
+        });
+
+//доступ к элементам для стран. связываем переменные с реальными элементами интерфейса из XML, чтобы с ними работать.
+        textViewCountryPicker = view.findViewById(R.id.textview_country_picker);
+        cityPicker = view.findViewById(R.id.city_picker);
+
+        Language.initLanguage(); // инициализируем (зашружаем данные) отдельный класс Language, который хранит список языков или стран.
+//Настройка NumberPicker
+        cityPicker.setMaxValue(Language.getLanguageArrayList().size() - 1); // МАКС значение. обратились к длине массива в классе Language/ минус один потому что длина всегла на 1 меньше
+        cityPicker.setMinValue(0); // МИН знач
+        cityPicker.setDisplayedValues(Language.languageNames()); // ставим, какие названия будут отображаться вместо чисел — массив с названиями языков
+
+//Слушатель изменений. Как только пользователь выберет другой язык, сработает этот код. берём выбранный язык из списка и показываешь его название в textViewCountryPicker.
+       cityPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+           @Override
+           public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+               textViewCountryPicker.setText("Selected: " + Language.getLanguageArrayList().get(newVal).getName());
+           }
+       });
+
+        return view;
     }
 }

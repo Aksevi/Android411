@@ -15,7 +15,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.TimePicker;
+import android.widget.ViewSwitcher;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -32,6 +36,13 @@ public class FragmentSecondPage extends Fragment {
 
     private List<String> dataList = new ArrayList<>(); // это нужно для работы с dataList который у нас в  DataAdapter.java
     private DataAdapter adapter; // это переменная класса DataAdapter
+
+// переменные для слайдера
+    ImageButton beforeButton;
+    ImageButton nextButton;
+    ImageSwitcher imageSwitcher;
+    int index = 0; // индекс массива - по умолчанию будет выводится изображение самое первое
+    int[] mas = {R.drawable.edible_1, R.drawable.edible_2, R.drawable.edible_3, R.drawable.edible_4}; // массив из картинок которые положили в drawable
 
 
     View view;
@@ -104,6 +115,48 @@ public class FragmentSecondPage extends Fragment {
             }
         });
 //==================================================================================================
+
+//((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
+//(((((((((((((((((((((((((((((((работаем с слайдером(((((((((((((((((((((((((((((((((((((((((((((((
+
+    beforeButton = view.findViewById(R.id.before_button);     // доступ к элементам
+    nextButton = view.findViewById(R.id.next_button);
+    imageSwitcher = view.findViewById(R.id.image_switcher);
+
+    beforeButton.setOnClickListener(new View.OnClickListener() { // жмем на кнопку назад
+        @Override
+        public void onClick(View v) {
+            index--;
+            if (index < 0){
+                index = mas.length - 1;
+            }
+            imageSwitcher.setImageResource(mas[index]);
+        }
+    });
+
+    nextButton.setOnClickListener(new View.OnClickListener() { // жмем на кнопку вперед
+        @Override
+        public void onClick(View v) {
+            index++;
+            if (index == mas.length){
+                index = 0;
+            }
+imageSwitcher.setImageResource(mas[index]);
+        }
+    });
+// обрабок замены изображений
+    imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() { //ImageSwitcher — это специальный виджет-контейнер, который позволяет плавно переключать изображения с анимацией. setFactory(...) сообщает ImageSwitcher, какой тип View он должен создавать, когда будет менять изображение.
+        public View makeView() {
+            ImageView imageView = new ImageView(getActivity(). getApplicationContext()); //создаёшь новый ImageView, который и будет показывать картинку.
+            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER); //ScaleType.FIT_CENTER — изображение будет вписано в центр ImageView без обрезания.
+            imageView.setMaxWidth(250); //MaxWidth и MaxHeight — ограничивают размеры картинки.
+            imageView.setMaxHeight(350);
+            return imageView;
+        }
+    });
+    imageSwitcher.setImageResource(mas[index]); //говоришь ImageSwitcher показать картинку по ресурсу, который лежит в массиве mas.
+//((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
+
         return view;
     }
 
