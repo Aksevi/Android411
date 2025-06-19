@@ -22,7 +22,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:padding="8dp"
-            app:srcCompat="@drawable/outline_devices_fold_24" />
+            app:srcCompat="@drawable/fold_icon2" />
 
     <!--вложенный вертикальный слой-->
         <LinearLayout

@@ -1,5 +1,6 @@
 package com.example.filemanagerprojectapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.format.Formatter;
 import android.view.LayoutInflater;
@@ -23,7 +24,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileViewHolder> { // им�
 
 
     //конструктор alt+ins
-    //передаёшь сюда:
+    //передаём сюда:
     //context — от активности или фрагмента,
     //file — список файлов,
     //listener — чтобы обрабатывать нажатия.
@@ -64,7 +65,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileViewHolder> { // им�
 
 //    Метод onBindViewHolder() Здесь происходит заполнение карточки файла — иконка, название, размер или количество вложенных файлов:
     @Override
-    public void onBindViewHolder(@NonNull FileViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FileViewHolder holder,  @SuppressLint("RecyclerView") int position) {
 //Название файла
         holder.tvFileName.setText(file.get(position).getName()); //Отображаем имя файла.
         holder.tvFileName.setSelected(true); //setSelected(true) — нужно, чтобы TextView мог прокручиваться (например, если ellipsize="marquee" в XML).
@@ -87,15 +88,15 @@ public class FileAdapter extends RecyclerView.Adapter<FileViewHolder> { // им�
         }
 //Выбор иконки по расширению Подбираем иконку в зависимости от расширения файла.
         if (file.get(position).getName().toLowerCase().endsWith(".jpeg")){
-            holder.imgFileType.setImageResource(R.drawable.image_icon);
+            holder.imgFileType.setImageResource(R.drawable.img_icon2);
         } else if (file.get(position).getName().toLowerCase().endsWith(".jpg")){
-            holder.imgFileType.setImageResource(R.drawable.image_icon);
+            holder.imgFileType.setImageResource(R.drawable.img_icon2);
         }
         else if (file.get(position).getName().toLowerCase().endsWith(".png")){
-            holder.imgFileType.setImageResource(R.drawable.image_icon);
+            holder.imgFileType.setImageResource(R.drawable.img_icon2);
         }
         else if (file.get(position).getName().toLowerCase().endsWith(".pdf")){
-            holder.imgFileType.setImageResource(R.drawable.pdf_icon);
+            holder.imgFileType.setImageResource(R.drawable.pdf_icon2);
         }
         else if (file.get(position).getName().toLowerCase().endsWith(".doc")){
             holder.imgFileType.setImageResource(R.drawable.doc_icon);
@@ -104,19 +105,19 @@ public class FileAdapter extends RecyclerView.Adapter<FileViewHolder> { // им�
             holder.imgFileType.setImageResource(R.drawable.doc_icon);
         }
         else if (file.get(position).getName().toLowerCase().endsWith(".mp3")){
-            holder.imgFileType.setImageResource(R.drawable.audio_icon);
+            holder.imgFileType.setImageResource(R.drawable.music_icon);
         }
         else if (file.get(position).getName().toLowerCase().endsWith(".wav")){
-            holder.imgFileType.setImageResource(R.drawable.audio_icon);
+            holder.imgFileType.setImageResource(R.drawable.music_icon);
         }
         else if (file.get(position).getName().toLowerCase().endsWith(".apk")){
-            holder.imgFileType.setImageResource(R.drawable.apk_icon);
+            holder.imgFileType.setImageResource(R.drawable.apk_icon2);
         }
         else if (file.get(position).getName().toLowerCase().endsWith(".mp4")){
-            holder.imgFileType.setImageResource(R.drawable.video_icon);
+            holder.imgFileType.setImageResource(R.drawable.video_icon1);
         }
         else {
-            holder.imgFileType.setImageResource(R.drawable.fold_ico);
+            holder.imgFileType.setImageResource(R.drawable.fold_icon2);
         }
 //Обработка нажатий
 // короткое нажатие Вызывается метод onFileClicked() из интерфейса — например, откроет папку или файл.
@@ -132,7 +133,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileViewHolder> { // им�
             @Override
             public boolean onLongClick(View v) {
 
-                listener.onFileLongClicked(file.get(position)); // onFileLongClicked из интерфеса
+                listener.onFileLongClicked(file.get(position), position); // onFileLongClicked из интерфеса. вторую position добавили для работы с пунктом Renaim
                 return true;
             }
         });
